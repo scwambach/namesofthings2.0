@@ -624,7 +624,7 @@ export type BreakNames =
   | 'xl'
   | 'xxl'
 
-export type Colors = 'red' | 'blue' | 'green' | 'orange' | 'black' | 'white'
+export type Colors = 'blue' | 'red' | 'black' | 'white'
 
 export type AlertTypes = 'success' | 'warning' | 'error' | 'info'
 

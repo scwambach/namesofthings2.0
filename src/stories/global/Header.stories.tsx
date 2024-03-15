@@ -13,7 +13,7 @@ type Story = StoryObj<typeof HeaderItem>
 
 export const Header: Story = {
   args: {
-    title: 'Next.js Starter Boilerplate',
+    title: 'Names of Things',
     menu: [
       {
         label: 'Home',

@@ -37,9 +37,9 @@ export const Blue: Story = {
   },
 }
 
-export const Green: Story = {
+export const Red: Story = {
   args: {
-    bgColor: 'green',
+    bgColor: 'red',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
       items: [
@@ -68,9 +68,49 @@ export const Green: Story = {
   },
 }
 
-export const Orange: Story = {
+export const Black: Story = {
   args: {
-    bgColor: 'orange',
+    bgColor: 'black',
+    crumbs: {
+      current: 'Quisque iaculis tincidunt',
+      items: [
+        {
+          label: 'Home',
+          href: '/',
+        },
+        {
+          label: 'About',
+          href: '/learn-more',
+        },
+        {
+          label: 'Contact',
+          href: '/contact',
+        },
+      ],
+    },
+    heading: 'Quisque iaculis tincidunt',
+    links: [
+      {
+        theme: 'tertiary',
+        label: 'Learn More',
+        href: '/learn-more',
+      },
+      {
+        theme: 'tertiary',
+        label: 'Contact Us',
+        href: '/contact',
+      },
+    ],
+    message:
+      'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
+    headingLevel: 1,
+    subheading: 'Quisque iaculis tincidunt',
+  },
+}
+
+export const White: Story = {
+  args: {
+    bgColor: 'white',
     crumbs: {
       current: 'Quisque iaculis tincidunt',
       items: [
@@ -237,8 +277,8 @@ export const Contained: Story = {
 
 export const CalloutBox: Story = {
   args: {
-    bgColor: 'green',
-    boxBgColor: 'black',
+    bgColor: 'black',
+    boxBgColor: 'white',
     contained: true,
     containedWidth: 'narrower',
     micro: true,

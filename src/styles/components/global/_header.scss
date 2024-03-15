@@ -1,12 +1,36 @@
 header {
-  padding: $vertical-spacing / 3 0;
+  padding: $vertical-spacing / 5 0;
+  background-color: $red;
 
   @media screen and (max-width: ($md - 1)) {
     padding: $vertical-spacing-mobile / 3 0;
   }
 
+  button {
+    &.button {
+      color: $white;
+      &.unstyled {
+        color: $white;
+      }
+    }
+  }
+
+  a {
+    &.linkObject {
+      color: $white;
+      &.button {
+        color: $white;
+        &.unstyled {
+          color: $white;
+        }
+      }
+    }
+  }
+
   .heading {
     margin: 0;
+    font-size: $size-52;
+    padding-bottom: $size-10;
   }
 
   li {

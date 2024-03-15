@@ -69,6 +69,11 @@
 
       &.white {
         background-color: $eggShell;
+        color: $black;
+
+        a:not(.button):not(.tagItem a) {
+          color: $black;
+        }
       }
     }
 
@@ -83,7 +88,7 @@
     background-color: $red;
     color: $eggShell;
 
-    a:not(.button) {
+    a:not(.button):not(.tagItem a) {
       color: $lightRed;
     }
   }
@@ -92,7 +97,7 @@
     background-color: $blue;
     color: $eggShell;
 
-    a:not(.button) {
+    a:not(.button):not(.tagItem a) {
       color: $lightBlue;
     }
   }
@@ -101,16 +106,8 @@
     background-color: $green;
     color: $eggShell;
 
-    a:not(.button) {
+    a:not(.button):not(.tagItem a) {
       color: $lightGreen;
-    }
-  }
-
-  &.orange {
-    background-color: $orange;
-
-    a:not(.button) {
-      color: $black;
     }
   }
 
@@ -118,7 +115,7 @@
     background-color: $black;
     color: $eggShell;
 
-    a:not(.button) {
+    a:not(.button):not(.tagItem a) {
       color: $eggShell;
     }
   }
