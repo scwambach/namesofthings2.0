@@ -1,0 +1,72 @@
+.dropdown {
+  display: inline-block;
+  position: relative;
+
+  &.open {
+    .menu {
+      display: flex;
+    }
+
+    .suffix {
+      transform: rotate(180deg);
+    }
+  }
+
+  .suffix {
+    transition: $transition;
+  }
+
+  &.touch {
+    .toggle {
+      display: none;
+    }
+
+    .mobileToggle,
+    .toggleScreen {
+      display: flex;
+    }
+  }
+
+  .mobileToggle {
+    position: relative;
+  }
+  .mobileToggle,
+  .toggleScreen {
+    display: none;
+  }
+
+  .toggleScreen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    opacity: 0;
+  }
+
+  .menu {
+    @include radius8;
+    display: none;
+    position: absolute;
+    box-shadow: $box-shadow-3;
+    border-left: $size-1 solid $lightGray;
+    border-right: $size-1 solid $lightGray;
+    border-bottom: $size-1 solid $lightGray;
+    min-width: $size-200;
+    background-color: $white;
+    z-index: 10;
+
+    .linkObject {
+      color: $black;
+      display: block;
+      width: 100%;
+      padding: $size-8 $size-16;
+
+      &:hover {
+        text-decoration: none;
+        opacity: 1;
+        background-color: $lightGray;
+      }
+    }
+  }
+}

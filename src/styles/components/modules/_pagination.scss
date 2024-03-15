@@ -1,0 +1,32 @@
+ul.pagination,
+.pagination {
+  margin-top: $size-32;
+  line-height: $line-height-single;
+  flex-wrap: wrap;
+
+  li {
+    margin: 0;
+
+    &.previous,
+    &.next {
+      a {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  a {
+    cursor: pointer;
+
+    &[rel='canonical'] {
+      pointer-events: none;
+      color: $black;
+    }
+
+    &[aria-disabled='true'] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}

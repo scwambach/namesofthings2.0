@@ -1,0 +1,184 @@
+.timeline {
+  @include vertical-spacing-margin;
+
+  .eventItems {
+    position: relative;
+
+    &:before {
+      @media screen and (min-width: ($xxs)) {
+        content: '';
+        position: absolute;
+        top: $size-10;
+        left: 50%;
+        width: $size-4;
+        height: calc(100% - $size-10);
+        background-color: $green;
+        transform: translateX(-50%);
+      }
+
+      @media screen and (max-width: ($sm - 1)) {
+        left: $size-16;
+      }
+    }
+
+    &:after {
+      @media screen and (min-width: ($xxs)) {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: $size-32;
+        height: $size-32;
+        background-color: $green;
+        border-radius: 100%;
+        transform: translate(-50%, -$size-8);
+      }
+
+      @media screen and (max-width: ($sm - 1)) {
+        left: $size-16;
+      }
+    }
+
+    .eventItem {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      @include vertical-spacing-margin;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:nth-child(even) {
+        @media screen and (min-width: ($sm)) {
+          flex-direction: row-reverse;
+        }
+
+        .year {
+          @media screen and (min-width: ($sm)) {
+            right: calc(100% + $size-24);
+          }
+        }
+
+        .date {
+          &:after {
+            right: calc(100% + $size-8);
+            width: $size-40;
+          }
+        }
+      }
+
+      &:nth-child(odd) {
+        .year {
+          @media screen and (min-width: ($sm)) {
+            left: calc(100% + $size-24);
+          }
+        }
+
+        .date {
+          width: 100%;
+          span {
+            padding-right: $size-8;
+          }
+
+          &:after {
+            @media screen and (min-width: ($sm)) {
+              left: $size-8;
+              width: calc(100% + $size-40);
+            }
+
+            @media screen and (max-width: ($sm - 1)) {
+              right: calc(100% + $size-8);
+              width: $size-40;
+            }
+          }
+        }
+      }
+    }
+
+    .info {
+      width: 100%;
+    }
+
+    .inner {
+      background-color: $white;
+      padding: $size-24;
+      box-shadow: $box-shadow-2;
+      width: calc(50% - ($size-48 + 0.1rem));
+      @include radius8;
+
+      @media screen and (min-width: (
+            $sm,
+          )) {
+        position: relative;
+      }
+
+      @media screen and (max-width: ($sm - 1)) {
+        margin-left: $size-72;
+        width: calc(100% - ($size-48 + 0.1rem));
+      }
+
+      @media screen and (max-width: ($xxs - 1)) {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .year {
+        color: $white;
+        background-color: $black;
+        width: $size-52;
+        height: $size-52;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        z-index: 1;
+        position: absolute;
+        top: $size-9;
+        border-radius: 100%;
+
+        @media screen and (max-width: ($sm - 1)) {
+          left: -$size-9;
+        }
+
+        @media screen and (max-width: ($xxs - 1)) {
+          display: none;
+        }
+      }
+
+      .date {
+        color: $red;
+        font-weight: bold;
+        position: relative;
+
+        span {
+          display: inline-block;
+          position: relative;
+          z-index: 2;
+          background-color: $white;
+        }
+
+        &:after {
+          @media screen and (min-width: ($xxs)) {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            content: '';
+            border-top: $size-3 dashed $red;
+          }
+        }
+      }
+
+      .imageObject,
+      .box,
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

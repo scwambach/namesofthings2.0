@@ -1,0 +1,7 @@
+#storybook-docs > div > div {
+  max-width: 1500px;
+}
+
+html, body {
+  background-color: #f7f7f7 !important;
+}

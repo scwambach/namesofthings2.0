@@ -1,0 +1,20 @@
+{
+  "title": "Contact Us",
+  "ogImage": "/image4.jpg",
+  "slug": "contact",
+  "level": 1,
+  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],
+  "description": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+  "pageComponents": [
+    {
+      "_type": "ContactBlock",
+      "heading": "Contact Us",
+      "level": 1,
+      "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+      "marker": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    }
+  ]
+}

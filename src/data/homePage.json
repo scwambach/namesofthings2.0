@@ -1,0 +1,178 @@
+{
+  "title": "Welcome",
+  "description": "This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
+  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "SCSS"],
+  "slug": "/",
+  "ogImage": "/image1.jpg",
+  "pageComponents": [
+    {
+      "_type": "Banner",
+      "_key": "ipwuernvp8",
+      "heading":"Welcome to the Next.js Starter",
+      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
+      "headingLevel": 1,
+      "foregroundMedia": {
+        "blockType": "module",
+        "_type": "ImageObject",
+        "src": "/marketing.png",
+        "height": 682,
+        "width": 1232,
+        "blurWidth": 8,
+        "blurHeight": 4
+      },
+      "bgColor":"green",
+      "crumbs": {
+        "current": "Home"
+      },
+      "links":[
+        {
+          "type": "link",
+          "href": "https://github.com/scwambach/nextjs-boilerplate",
+          "label": "Check out the GitHub Repo"
+        }
+      ]
+    },
+    {
+      "_type": "River",
+      "_key": "soiuhgldfjg2345",
+      "headingLevel": 2,
+      "items": [
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 1",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "Banner",
+      "_key": "ipwuernvp8",
+      "heading":"Welcome to the Next.js Starter",
+      "message":"This is a simple starter for Next.js with TypeScript, ESLint, Prettier, and SCSS.",
+      "headingLevel": 3,
+      "backgroundImage": {
+        "query": "nature",
+        "alt": "Nature"
+      },
+      "contained": true,
+      "overlap": true,
+      "bgColor":"blue",
+      "links":[
+        {
+          "theme": "tertiary",
+          "type": "link",
+          "href": "https://github.com/scwambach/nextjs-boilerplate",
+          "label": "Check out the GitHub Repo"
+        }
+      ]
+    },
+    {
+      "_type": "Quote",
+      "_key": "39urtnveod",
+      "quote":"Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+      "cite":"Scott Wambach",
+      "person":{
+        "firstName": "Scott",
+        "lastName": "Wambach",
+        "title": "Founder",
+        "company": "Wambach Media",
+        "image": {
+          "src": "https://source.unsplash.com/random/400x400?person",
+          "alt": "Scott Wambach"
+        },
+        "socials": [
+          {
+            "href": "https://twitter.com/scwambach",
+            "icon": "TwitterLogo",
+            "screenReader": "Twitter"
+          },
+          {
+            "href": "https://www.linkedin.com/in/scwambach/",
+            "icon": "LinkedinLogo",
+            "screenReader": "LinkedIn"
+          }
+        ]
+      }
+    },
+    {
+      "_type": "Cards",
+      "_key": "30gjefuvb34ijd",
+      "heading": "Nam felis",
+      "level": 3,
+      "columns": 4,
+      "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+      "items": [
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 2"
+          }
+        },
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 3"
+          }
+        },
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 4"
+          }
+        },
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 5"
+          }
+        }
+      ]
+    },
+    {
+      "_type": "River",
+      "_key": "fbvuirybineirvijsopig4",
+      "reverse": true,
+      "items": [
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 6",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

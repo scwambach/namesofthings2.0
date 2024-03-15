@@ -1,0 +1,62 @@
+.button {
+  @include radius4;
+  align-items: center;
+  appearance: none;
+  background: $blue;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: $size-16;
+  gap: $size-5;
+  letter-spacing: $size-1 / 2;
+  line-height: $line-height-single;
+  outline-offset: $size-2;
+  padding: $size-8 $size-16;
+  text-align: center;
+  transition-property: background-color, color, box-shadow;
+  transition: $transition;
+
+  &:focus {
+    @media screen and (min-width: ($sm)) {
+      outline: $size-4 solid $red;
+    }
+  }
+
+  &:hover {
+    @media screen and (min-width: ($sm)) {
+      text-decoration: none;
+      background-color: $lightBlue;
+      opacity: 1;
+      color: $black;
+      box-shadow: $box-shadow-1;
+    }
+  }
+
+  &.small {
+    padding: $size-6 $size-12;
+    font-size: $size-12;
+  }
+
+  &.unstyled {
+    @include unstyledButton;
+  }
+
+  &.secondary {
+    background-color: $green;
+
+    &:hover {
+      background-color: $lightGreen;
+      color: $black;
+    }
+  }
+
+  &.tertiary {
+    background-color: $orange;
+
+    &:hover {
+      background-color: $lightOrange;
+      color: $black;
+    }
+  }
+}

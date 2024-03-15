@@ -1,0 +1,7 @@
+.form {
+  @include vertical-spacing-margin;
+
+  button[type='submit'] {
+    margin-top: $size-32;
+  }
+}

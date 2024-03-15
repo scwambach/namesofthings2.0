@@ -1,0 +1,10 @@
+.post {
+  .tableOfContents {
+    width: $xxs;
+
+    @media screen and (min-width: ($lg)) {
+      position: sticky;
+      top: $size-16;
+    }
+  }
+}

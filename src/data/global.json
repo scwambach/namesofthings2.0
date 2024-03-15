@@ -1,0 +1,96 @@
+
+{
+  "siteTitle": "Next.js Starter Boilerplate",
+  "siteDescription": "My site description",
+  "favicon": "/favicon.ico",
+  "siteImage": "/image2.jpg",
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/",
+      "type": "link"
+    },
+    {
+      "label": "About",
+      "type": "button",
+      "href": "/about",
+      "subnav": [
+        {
+          "copy": "About Us",
+          "href": "/about"
+        },
+        {
+          "copy": "Our Team",
+          "href": "/team"
+        }
+        ]
+    },
+    {
+      "label": "Blog",
+      "href": "/blog",
+      "type": "link"
+    },{
+      "label": "Contact",
+      "href": "/contact",
+      "type": "link"
+    },{
+      "label": "Storybook",
+      "href": "https://65da9cbdd5f49ca4900b50d2-xspovsvtyj.chromatic.com/",
+      "type": "link"
+    }
+  ],
+  "contact": {
+    "phone": "123-456-7890",
+    "email": "email@email.com",
+    "address": {
+      "street": "1234 Main St",
+      "city": "Anytown",
+      "state": "ST",
+      "zip": "12345"
+    },
+    "hours": [
+      {
+        "days": "Monday",
+        "hours": "9am - 5pm"
+      },
+      {
+        "days": "Tuesday",
+        "hours": "9am - 5pm"
+      },
+      {
+        "days": "Wednesday",
+        "hours": "9am - 5pm"
+      },
+      {
+        "days": "Thursday",
+        "hours": "9am - 5pm"
+      },
+      {
+        "days": "Friday",
+        "hours": "9am - 5pm"
+      },
+      {
+        "days": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "social": [
+      {
+        "icon": "FacebookLogo",
+        "screenReader": "Link to Facebook",
+        "href": "https://www.facebook.com"
+      },
+      {
+        "icon": "TwitterLogo",
+        "screenReader": "Link to Twitter",
+        "href": "https://www.twitter.com"
+      },
+      {
+        "icon": "InstagramLogo",
+        "screenReader": "Link to Instagram",
+        "href": "https://www.instagram.com"
+      }
+    ]
+  },
+  "footerCopy": "Proin placerat mattis viverra. Sed ornare nibh ut dui egestas egestas. Etiam ligula felis, venenatis vitae orci id, congue tristique."
+}

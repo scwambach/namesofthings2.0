@@ -1,0 +1,41 @@
+.box {
+  &.radius-4 {
+    @include radius4;
+  }
+
+  &.radius-8 {
+    @include radius8;
+  }
+
+  &.radius-12 {
+    @include radius12;
+  }
+
+  &.radius-4-overflow {
+    @include radius4overflow;
+  }
+
+  &.radius-8-overflow {
+    @include radius8overflow;
+  }
+
+  &.radius-12-overflow {
+    @include radius12overflow;
+  }
+
+  &.shadow-1 {
+    box-shadow: $box-shadow-1;
+  }
+
+  &.shadow-2 {
+    box-shadow: $box-shadow-2;
+  }
+
+  &.shadow-3 {
+    box-shadow: $box-shadow-3;
+  }
+
+  &.shadow-4 {
+    box-shadow: $box-shadow-4;
+  }
+}

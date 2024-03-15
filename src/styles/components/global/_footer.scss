@@ -1,0 +1,10 @@
+footer {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: $vertical-spacing / 2 0;
+
+  @media screen and (max-width: ($md - 1)) {
+    padding: $vertical-spacing-mobile / 2 0;
+  }
+}

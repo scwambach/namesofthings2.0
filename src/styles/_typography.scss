@@ -1,0 +1,130 @@
+main,
+body {
+  line-height: $line-height-base;
+  color: $black;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+ol,
+blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $line-height-tight;
+  margin: $size-24 0;
+}
+
+p,
+li,
+ul,
+ol,
+blockquote {
+  margin: $size-8 0;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: $size-48;
+}
+
+h2 {
+  font-size: $size-40;
+}
+
+h3 {
+  font-size: $size-32;
+}
+
+h4 {
+  font-size: $size-24;
+}
+
+h5 {
+  font-size: $size-20;
+}
+
+h6 {
+  font-size: $size-18;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+small {
+  font-size: $size-14;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: $transition;
+  transition-property: opacity;
+
+  &:hover {
+    @media screen and (min-width: ($sm)) {
+      opacity: 0.5;
+      text-decoration: underline;
+    }
+  }
+}
+
+ul,
+ol {
+  padding-left: $size-16;
+
+  &.unstyled {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0;
+    }
+  }
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+hr {
+  border: 0;
+  border-top: $size-1 solid $black;
+  margin: 0;
+}

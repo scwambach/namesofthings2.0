@@ -1,0 +1,52 @@
+.quote {
+  @include vertical-spacing-padding;
+
+  @media screen and (min-width: ($sm)) {
+    text-align: center;
+  }
+
+  &.red {
+    background-color: $lightRed;
+  }
+
+  &.blue {
+    background-color: $lightBlue;
+  }
+
+  &.green {
+    background-color: $lightGreen;
+  }
+
+  &.orange {
+    background-color: $lightOrange;
+  }
+
+  blockquote {
+    font-size: $size-32;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (max-width: ($sm - 1)) {
+      font-size: $size-24;
+    }
+  }
+
+  cite {
+    display: flex;
+    gap: $size-8;
+    line-height: $line-height-single;
+    justify-content: center;
+    margin-top: $size-32;
+
+    > div {
+      &.flex {
+        @media screen and (max-width: ($sm - 1)) {
+          width: 100%;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "title": "Team",
+  "slug": "team",
+  "ogImage": "/image5.jpg",
+  "keywords": ["Next.js", "TypeScript", "ESLint", "Prettier", "Tailwind CSS"],
+  "description": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+  "pageComponents": [
+    {
+      "_type": "People",
+      "heading": "Our Team",
+      "level": 1,
+      "columns": 4,
+      "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+      "items": [
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 1",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 2",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 3",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 4",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 5",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 6",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 7",
+            "alt": "Scott Wambach"
+          }
+        },
+        {
+          "firstName": "Scott",
+          "lastName": "Wambach",
+          "title": "Founder",
+          "company": "Wambach Media",
+          "image": {
+            "query": "human face 8",
+            "alt": "Scott Wambach"
+          }
+        }
+      ]
+    },
+    {
+      "_type": "Quote",
+      "quote": "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+      "cite": "Scott Wambach",
+      "person": {
+        "firstName": "Scott",
+        "lastName": "Wambach",
+        "title": "Founder",
+        "company": "Wambach Media",
+        "image": {
+          "src": "https://source.unsplash.com/random/400x400?person",
+          "alt": "Scott Wambach"
+        },
+        "socials": [
+          {
+            "href": "https://twitter.com/scwambach",
+            "icon": "TwitterLogo",
+            "screenReader": "Twitter"
+          },
+          {
+            "href": "https://www.linkedin.com/in/scwambach/",
+            "icon": "LinkedinLogo",
+            "screenReader": "LinkedIn"
+          }
+        ]
+      }
+    },
+    {
+      "_type": "River",
+      "headingLevel": 2,
+      "items": [
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 6",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        },
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 7",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        },
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 8",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "New Test": {
+    "prefix": "newTest",
+    "body": [
+      "import { ${TM_FILENAME_BASE/([^.]+).*/${1}/} } from '@components';",
+      "import { cleanup, render } from '@testing-library/react';",
+      "",
+      "afterEach(cleanup);",
+      "",
+      "describe('<${TM_FILENAME_BASE/([^.]+).*/${1}/} />', () => {",
+      "  test('$1', () => {",
+      "    const { getByTestId } = render(",
+      "      <${TM_FILENAME_BASE/([^.]+).*/${1}/} />",
+      "    );",
+      "    const component = getByTestId('$3');",
+      "    expect(component).toBeVisible();",
+      "  });",
+      "});      "
+    ],
+    "description": "Module"
+  },
+  "New Component": {
+    "prefix": "newComponent",
+    "body": [
+      "import { ComponentProps } from '@utils/types'",
+      "",
+      "// TODO: Create ${TM_FILENAME_BASE/(.*)/${1}/} tests and stories",
+      "",
+      "interface ${TM_FILENAME_BASE/(.*)/${1}/}Props extends ComponentProps {}",
+      "",
+      "export const ${TM_FILENAME_BASE/(.*)/${1}/} = ({ className, testId, componentId }: ${TM_FILENAME_BASE/(.*)/${1}/}Props) => {",
+      "  return (",
+      "    <div",
+      "      id={componentId}",
+      "      data-testid={testId}",
+      "      className={`${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}${className ? ` ${${className}}` : ''}`}",
+      "    >",
+      "      <code>",
+      "        <pre",
+      "          style={{",
+      "            fontFamily: 'monospace',",
+      "            display: 'block',",
+      "            padding: '50px',",
+      "            color: '#88ffbf',",
+      "            backgroundColor: 'black',",
+      "            textAlign: 'left',",
+      "            whiteSpace: 'pre-wrap',",
+      "          }}",
+      "        >",
+      "          {JSON.stringify('props', null, '    ')}",
+      "        </pre>",
+      "      </code>",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Component"
+  },
+  "New SVG": {
+    "prefix": "newSvg",
+    "body": [
+      "interface Props {",
+      "  size?: number;",
+      "  color?: string;",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1}/} = ({ size, color }: Props) => {",
+      "  return (",
+      "    $1",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1}/};",
+      ""
+    ],
+    "description": "New SVG"
+  },
+  "Map Loop": {
+    "prefix": "map-loop",
+    "body": ["{$1.map($2 => (", "  $3", "))}"]
+  },
+  "Dangerously Set HTML": {
+    "prefix": "danger-html",
+    "body": ["<div dangerouslySetInnerHTML={{", "  __html: copy,", "}}", "/>"]
+  },
+  "Dump": {
+    "prefix": "dump",
+    "body": [
+      "",
+      "",
+      "",
+      "<code>",
+      "  <pre style={{",
+      "    fontFamily: 'monospace',",
+      "    display: 'block',",
+      "    padding: '50px',",
+      "    color: '#88ffbf',",
+      "    backgroundColor: 'black',",
+      "    textAlign: 'left',",
+      "    whiteSpace: 'pre-wrap',",
+      "  }}",
+      "  >",
+      "    {JSON.stringify($1, null, '    ')}",
+      "  </pre>",
+      "</code>",
+      "",
+      "",
+      ""
+    ]
+  },
+  "Story": {
+    "prefix": "new-story",
+    "body": [
+      "import { ${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/} as ${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/}Item } from \"@components/$1/${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/}\";",
+      "import type { Meta, StoryObj } from \"@storybook/react\";",
+      "",
+      "const meta: Meta<typeof ${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/}Item> = {",
+      "  title: \"Components/$2\",",
+      "  component: ${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/}Item,",
+      "  tags: [\"autodocs\"],",
+      "};",
+      "",
+      "export default meta;",
+      "type Story = StoryObj<typeof ${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/}Item>;",
+      "",
+      "export const ${TM_FILENAME_BASE/^(.*?)(?:\\.stories)?(?:\\.\\w+)?$/$1/}: Story = {",
+      "  args: {},",
+      "};",
+      ""
+    ]
+  }
+}

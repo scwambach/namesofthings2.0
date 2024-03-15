@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Pre-Commit ✅"
+
+# Check code formatting
+npm run check-format || {
+  echo 'Found code formatting issues that need to be fixed.'
+  read -p "Press Enter to continue or Ctrl+C to cancel the commit" -n 1 -r
+  echo    # move to a new line after user input
+  exit 1
+}
+
+# Check ESLint standards
+npm run check-lint || {
+  echo 'Found linting issues that need to be fixed.'
+  read -p "Press Enter to continue or Ctrl+C to cancel the commit" -n 1 -r
+  echo    # move to a new line after user input
+  exit 1
+}
+
+echo 'All checks passed! Committing now.'

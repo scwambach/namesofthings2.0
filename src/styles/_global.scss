@@ -1,0 +1,165 @@
+html {
+  background-color: $black;
+
+  main {
+    background-color: $eggShell;
+  }
+}
+
+* {
+  &:focus {
+    outline-offset: $size-2;
+    outline: $size-4 solid $red;
+  }
+}
+
+::selection {
+  background: $orange;
+  color: $white;
+  text-shadow: -1px 1px 3px $black;
+}
+
+#bodyContent {
+  outline: none;
+}
+
+.hide {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: $xxl;
+  padding: 0 $size-32;
+  margin: 0 auto;
+  position: relative;
+
+  &.padded {
+    padding-top: $vertical-spacing;
+    padding-bottom: $vertical-spacing;
+
+    @media screen and (max-width: ($md - 1)) {
+      padding-top: $vertical-spacing-mobile;
+      padding-bottom: $vertical-spacing-mobile;
+    }
+  }
+
+  &.wide {
+    max-width: $xl + $sm;
+  }
+
+  &.wider {
+    max-width: $xl + $md;
+  }
+
+  &.narrow {
+    max-width: $xl;
+  }
+
+  &.narrower {
+    max-width: $md;
+  }
+
+  &.full {
+    max-width: 100%;
+  }
+}
+
+.gap-none {
+  gap: 0;
+}
+
+.gap-micro {
+  gap: $size-4;
+}
+
+.gap-xxs {
+  gap: $size-16;
+}
+
+.gap-xs {
+  gap: $size-20;
+}
+
+.gap-sm {
+  gap: $size-32;
+}
+
+.gap-md {
+  gap: $size-40;
+}
+
+.gap-lg {
+  gap: $size-52;
+}
+
+.gap-xl {
+  gap: $size-72;
+}
+
+.gap-xxl {
+  gap: $size-84;
+}
+
+.gap-mega {
+  gap: $size-120;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skipToMain {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  z-index: 999;
+
+  &:focus {
+    top: $size-10;
+    left: $size-10;
+  }
+}
+
+.desktopOnly {
+  @media screen and (max-width: ($md - 1)) {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+.mobileOnly {
+  @media screen and (min-width: $md) {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}

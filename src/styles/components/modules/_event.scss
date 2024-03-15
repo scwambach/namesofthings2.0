@@ -1,0 +1,99 @@
+.event {
+  padding: $size-16 $size-8;
+  transition: $transition;
+
+  &:hover {
+    background-color: $white;
+    box-shadow: $box-shadow-2;
+  }
+
+  .info {
+    @media screen and (min-width: ($sm)) {
+      width: calc(100% - $size-60);
+    }
+  }
+
+  .details {
+    width: 100%;
+
+    @media screen and (min-width: ($sm)) {
+      width: calc(100% - ($size-200 + $size-52));
+    }
+  }
+
+  .poster {
+    position: relative;
+
+    @media screen and (min-width: ($sm)) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      padding-bottom: 56.25%;
+    }
+
+    .button {
+      @media screen and (max-width: ($sm - 1)) {
+        pointer-events: none;
+      }
+
+      span {
+        position: absolute;
+        background-color: $blue;
+        color: $white;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $size-8;
+        transition: $transition;
+        opacity: 0;
+      }
+
+      &:hover {
+        @media screen and (min-width: ($sm)) {
+          span {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+
+  .date {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $orange;
+    color: $white;
+    width: 60px;
+    padding: $size-6 $size-4 $size-4 $size-4;
+    line-height: $line-height-single;
+
+    > span {
+      font-weight: bold;
+    }
+
+    .heading {
+      font-size: $size-24;
+      margin: 0;
+    }
+  }
+
+  .links {
+    @media screen and (min-width: ($sm)) {
+      width: $size-200 + $size-52;
+    }
+
+    @media screen and (max-width: ($sm - 1)) {
+      justify-content: flex-start;
+    }
+  }
+
+  .times {
+    margin-top: $size-8;
+    line-height: $line-height-single;
+  }
+}

@@ -1,0 +1,230 @@
+@mixin inputstyle {
+  input,
+  textarea,
+  select {
+    @include radius4;
+    appearance: none;
+    font-size: $size-16;
+    box-shadow: none;
+    display: block;
+    border: $size-1 solid $lightBlue;
+    padding: $size-4 $size-8;
+    min-height: $size-32;
+    outline-offset: $size-2;
+    width: 100%;
+
+    &:focus {
+      @media screen and (min-width: ($sm)) {
+        outline: none;
+        outline: $size-4 solid $red;
+      }
+    }
+  }
+}
+
+.formField {
+  &.radio,
+  &.checkbox {
+    [class$='indicator'] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: $size-1 solid $gray;
+      outline-offset: -$size-3;
+    }
+
+    &.radio {
+      [class$='indicator'] {
+        border-radius: 50%;
+      }
+    }
+
+    &.checkbox {
+      [class$='indicator'] {
+        @include radius4;
+      }
+    }
+
+    span {
+      line-height: $line-height-single;
+    }
+
+    svg {
+      opacity: 0;
+    }
+
+    label {
+      > div {
+        outline-offset: $size-2;
+        &.focused {
+          @media screen and (min-width: ($sm)) {
+            outline: none;
+            outline: $size-4 solid $red;
+          }
+        }
+      }
+    }
+
+    input {
+      height: 0;
+      width: 0;
+      opacity: 0;
+      position: absolute;
+      overflow: hidden;
+      appearance: none;
+
+      &:focus {
+        @media screen and (min-width: ($sm)) {
+          outline: none;
+          outline: $size-4 solid $red;
+        }
+      }
+
+      &:checked + [class$='indicator'] {
+        outline-color: transparent;
+
+        svg {
+          color: $blue;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.text,
+  &.textarea,
+  &.date,
+  &.datetime-local,
+  &.email,
+  &.search,
+  &.color,
+  &.month,
+  &.number,
+  &.password,
+  &.tel,
+  &.time,
+  &.url,
+  &.week {
+    @include inputstyle;
+  }
+
+  &.select {
+    > div {
+      position: relative;
+
+      svg {
+        position: absolute;
+        right: $size-8;
+        bottom: $size-7;
+      }
+    }
+
+    @include inputstyle;
+  }
+
+  &.textarea {
+    textarea {
+      resize: none;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &.file {
+    input {
+      height: 0;
+      width: 0;
+      opacity: 0;
+      position: absolute;
+      overflow: hidden;
+      appearance: none;
+
+      + .dropzone {
+        outline-offset: $size-2;
+      }
+
+      &:focus {
+        + .dropzone {
+          @media screen and (min-width: ($sm)) {
+            background-color: $lightBlue;
+            outline: $size-4 solid $blue;
+          }
+        }
+      }
+    }
+
+    .dropzone {
+      @include radius4;
+      cursor: pointer;
+      width: 100%;
+      padding: $size-16;
+      border: $size-1 solid $lightBlue;
+      background-color: $white;
+
+      &:hover {
+        @media screen and (min-width: ($sm)) {
+          background-color: $lightBlue;
+        }
+      }
+    }
+  }
+
+  &.multiselect {
+    [class$='-container'] {
+      width: 100%;
+    }
+
+    .focused {
+      @media screen and (min-width: ($sm)) {
+        width: 100%;
+        outline-offset: $size-2;
+        outline: $size-4 solid $blue;
+      }
+    }
+
+    [class$='-control'] {
+      min-height: $size-32;
+      border: $size-1 solid $lightBlue;
+      @include radius4;
+    }
+
+    [class$='-ValueContainer'] {
+      padding: $size-5 $size-8 $size-4;
+
+      [class$='-placeholder'] {
+        color: $black;
+      }
+
+      [class$='-Input'] {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    [class$='-indicatorSeparator'] {
+      display: none;
+    }
+
+    [class$='-indicatorContainer'] {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      svg {
+        color: $black;
+      }
+    }
+  }
+  &.search {
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: $size-8;
+      bottom: $size-7;
+      z-index: 2;
+      width: $size-20;
+      height: $size-20;
+    }
+  }
+}

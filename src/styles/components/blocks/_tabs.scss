@@ -1,0 +1,132 @@
+.tabs {
+  @include vertical-spacing-margin;
+  position: relative;
+
+  ul {
+    &.unstyled {
+      @media screen and (max-width: ($sm - 1)) {
+        display: none;
+      }
+
+      li {
+        margin: 0;
+      }
+
+      &.open {
+        @media screen and (max-width: ($sm - 1)) {
+          display: flex;
+          z-index: 10;
+          position: absolute;
+          background-color: $white;
+          box-shadow: $box-shadow-2;
+          left: 50%;
+          transform: translateX(-50%);
+          top: inherit;
+          flex-direction: column;
+          width: 95%;
+          gap: 0;
+          align-items: stretch;
+          padding: 0;
+          border: $size-1 solid $lightGray;
+
+          li {
+            margin: 0;
+          }
+
+          .button {
+            @include unstyledButton;
+            padding: $size-8 $size-16;
+            width: 100%;
+            font-weight: bold;
+            color: $gray;
+
+            &:hover {
+              text-decoration: none;
+
+              &.primary {
+                background-color: $blue;
+                color: $white;
+              }
+
+              &.secondary {
+                background-color: $green;
+                color: $white;
+              }
+
+              &.tertiary {
+                background-color: $orange;
+                color: $white;
+              }
+
+              background-color: $lightGray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    &.toggle {
+      @media screen and (min-width: ($sm)) {
+        display: none;
+      }
+
+      @media screen and (max-width: ($sm - 1)) {
+        background-color: $lightGray;
+        font-weight: bold;
+        padding: $size-8;
+
+        &.primary {
+          background-color: $lightBlue;
+          color: darken($blue, 10%);
+        }
+
+        &.secondary {
+          background-color: $lightGreen;
+          color: $green;
+        }
+
+        &.tertiary {
+          background-color: $lightOrange;
+          color: darken($orange, 30%);
+        }
+
+        &.open {
+          .indicator {
+            transform: rotate(180deg);
+          }
+        }
+        .indicator {
+          transition: $transition;
+        }
+      }
+    }
+
+    &.active {
+      @media screen and (min-width: ($sm)) {
+        position: relative;
+
+        &:before {
+          content: '';
+          height: $size-4;
+          width: 100%;
+          position: absolute;
+          bottom: calc(100% + $size-8);
+          background-color: $gray;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .panel {
+    border: $size-1 solid $lightGray;
+    padding: $size-16;
+    background-color: $white;
+
+    @media screen and (max-width: ($sm - 1)) {
+      margin-top: $size-16;
+    }
+  }
+}

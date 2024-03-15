@@ -1,0 +1,21 @@
+.logoRow {
+  padding: $size-32 0;
+  background-color: $lightGray;
+
+  .flex {
+    @media screen and (max-width: ($sm - 1)) {
+      gap: $size-32;
+    }
+  }
+
+  [data-label='image-container'] {
+    img {
+      height: $size-80;
+      width: auto;
+
+      @media screen and (max-width: ($sm - 1)) {
+        height: $size-64;
+      }
+    }
+  }
+}

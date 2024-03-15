@@ -1,0 +1,176 @@
+.card {
+  background-color: $white;
+  border: $size-1 solid $lightGray;
+  color: $black;
+  padding: $size-8;
+  position: relative;
+  box-shadow: 0;
+  box-shadow: $box-shadow-1;
+
+  &.link {
+    transition: $transition;
+    transform: translateZ(0);
+    width: 100%;
+    @include radius8;
+
+    > div {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-$size-4);
+      box-shadow: $box-shadow-4;
+      background-color: $lightBlue;
+      opacity: 1;
+
+      text-decoration: none;
+    }
+
+    &.primary {
+      &:hover {
+        background-color: $lightBlue;
+        color: $black;
+      }
+    }
+
+    &.secondary {
+      &:hover {
+        background-color: $lightGreen;
+        color: $black;
+      }
+    }
+
+    &.tertiary {
+      &:hover {
+        background-color: $lightOrange;
+        color: $black;
+      }
+    }
+  }
+
+  .tags {
+    position: absolute;
+    top: $size-16;
+    left: $size-16;
+    z-index: 2;
+  }
+
+  .date {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: $size-16;
+  }
+
+  .avatars {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heading {
+    font-size: $size-24;
+    margin: 0 0 $size-16 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+  }
+
+  .copy {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+  }
+
+  .image {
+    margin-bottom: $size-16;
+  }
+
+  .links {
+    margin-top: $size-32;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .inner {
+    padding: $size-8;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+
+    > div {
+      &:first-of-type {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .image {
+    a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    position: relative;
+    height: 0;
+    z-index: 1;
+    padding-bottom: 56.25%;
+  }
+}
+
+.authors {
+  margin-top: $size-32;
+
+  @media screen and (max-width: ($md - 1)) {
+    align-items: flex-start;
+  }
+
+  &.multiple {
+    &:hover {
+      .author {
+        + .author {
+          @media screen and (min-width: ($md)) {
+            margin-left: $size-4;
+          }
+        }
+      }
+
+      .authorNames {
+        @media screen and (min-width: ($md)) {
+          margin-left: -$size-36;
+        }
+      }
+    }
+  }
+
+  .authorNames {
+    position: relative;
+    transition: $transition;
+  }
+
+  .author {
+    position: relative;
+    transition: $transition;
+
+    + .author {
+      margin-left: $size-8;
+      @media screen and (min-width: ($md)) {
+        margin-left: -$size-28;
+      }
+    }
+
+    .avatar {
+      border-radius: 100%;
+      outline: $size-1 solid $white;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}

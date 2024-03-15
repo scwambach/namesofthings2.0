@@ -1,0 +1,259 @@
+{
+  "title": "About Us",
+  "slug": "about",
+  "ogImage": "/image2.jpg",
+  "description": "Proin vel molestie purus, vel tempus nibh. Vestibulum dolor sapien, semper ut sapien ac, facilisis dapibus urna. In imperdiet nisi a pharetra ultricies. Pellentesque quis.",
+  "keywords": ["about", "us", "company", "information"],
+  "pageComponents": [
+    {
+      "_type": "Banner",
+      "heading":"About Us",
+      "message":"Proin vel molestie purus, vel tempus nibh. Vestibulum dolor sapien, semper ut sapien ac, facilisis dapibus urna. In imperdiet nisi a pharetra ultricies. Pellentesque quis.",
+      "headingLevel": 1,
+      "foregroundMedia": {
+        "_type": "ImageObject",
+        "blockType": "module",
+        "query": "group of people",
+        "alt": "About Us",
+        "width": 500,
+        "height": 300
+      },
+      "bgColor":"orange",
+      "crumbs":{
+        "current": "About",
+        "items": [
+          {
+            "label": "Home",
+            "href": "/"
+          }
+        ]
+      }
+    },
+    {
+      "_type": "Map",
+      "markers": [
+        {
+          "lat": 40.7128,
+          "lng": -74.006
+        },
+        {
+          "lat": 34.0522,
+          "lng": -118.2437
+        },
+        {
+          "lat": 41.8781,
+          "lng": -87.6298
+        }
+      ]
+    },
+    {
+      "_type": "River",
+      "headingLevel": 2,
+      "items": [
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 1",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        },
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 2",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        },
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 3",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "Gallery",
+      "heading": "Nam felis",
+      "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+      "gap": "xxs",
+      "columns": 5,
+      "level": 3,
+      "items": [{
+        "query": "party 1",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 2",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 3",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 4",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 5",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 6",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 7",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 8",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 9",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      },{
+        "query": "party 10",
+        "alt": "Nam felis",
+        "width": 1400,
+        "height": 900
+      }
+    ]
+    },
+    {
+      "_type": "Cards",
+      "heading": "Nam felis",
+      "level": 4,
+      "columns": 4,
+      "subheading": "Sed quis nulla molestie, ornare nisl et, venenatis metus.",
+      "items": [
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 2"
+          }
+        },
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 3"
+          }
+        },
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 4"
+          }
+        },
+        {
+          "title": "Nam felis",
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "image": {
+            "alt": "Nam felis",
+            "query": "corporate 5"
+          }
+        }
+      ]
+    },
+    {
+      "_type": "Quote",
+      "quote": "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+      "cite": "Scott Wambach",
+      "person": {
+        "firstName": "Scott",
+        "lastName": "Wambach",
+        "title": "Founder",
+        "company": "Wambach Media",
+        "image": {
+          "src": "https://source.unsplash.com/random/400x400?person",
+          "alt": "Scott Wambach"
+        },
+        "socials": [
+          {
+            "href": "https://twitter.com/scwambach",
+            "icon": "TwitterLogo",
+            "screenReader": "Twitter"
+          },
+          {
+            "href": "https://www.linkedin.com/in/scwambach/",
+            "icon": "LinkedinLogo",
+            "screenReader": "LinkedIn"
+          }
+        ]
+      }
+    },
+    {
+      "_type": "River",
+      "reverse": true,
+      "headingLevel": 4,
+      "items": [
+        {
+          "description":
+            "Sed quis nulla molestie, ornare nisl et, venenatis metus. Maecenas finibus porta neque, vitae porta leo iaculis eu. Praesent convallis lobortis libero in pharetra.",
+          "title": "Nam felis",
+          "image": {
+            "query": "corporate 6",
+            "alt": "Nam felis"
+          },
+          "links": [
+            {
+              "type": "link",
+              "href": "/about",
+              "label": "Learn More"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

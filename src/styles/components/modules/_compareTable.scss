@@ -1,0 +1,42 @@
+.compareTable {
+  padding: $size-32 $size-16;
+  max-width: $size-200 + $size-164;
+
+  .heading {
+    font-size: $size-52;
+  }
+
+  .eyebrow,
+  .subheading {
+    font-size: $size-20;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  &.highlight {
+    color: $eggShell;
+  }
+
+  &.primary {
+    background-color: $lightBlue;
+
+    &.highlight {
+      background: $blue;
+      color: $eggShell;
+    }
+  }
+  &.secondary {
+    background-color: $lightGreen;
+
+    &.highlight {
+      background: $green;
+    }
+  }
+  &.tertiary {
+    background-color: $lightOrange;
+
+    &.highlight {
+      background: $orange;
+    }
+  }
+}

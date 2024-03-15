@@ -1,0 +1,34 @@
+.tagItem {
+  display: inline-block;
+  padding: $size-4 $size-8;
+  font-size: $size-12;
+  letter-spacing: $size-1;
+  font-weight: 800;
+
+  &.primary {
+    color: darken($blue, 0%);
+    background-color: $lightBlue;
+
+    a {
+      color: darken($blue, 0%);
+    }
+  }
+
+  &.secondary {
+    color: darken($green, 10%);
+    background-color: $lightGreen;
+
+    a {
+      color: darken($green, 10%);
+    }
+  }
+
+  &.tertiary {
+    color: darken($orange, 30%);
+    background-color: $lightOrange;
+
+    a {
+      color: darken($orange, 30%);
+    }
+  }
+}
