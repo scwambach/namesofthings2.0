@@ -80,24 +80,47 @@
   }
 
   &.red {
-    background-color: $lightRed;
+    background-color: $red;
+    color: $eggShell;
+
+    a:not(.button) {
+      color: $lightRed;
+    }
   }
 
   &.blue {
-    background-color: $lightBlue;
+    background-color: $blue;
+    color: $eggShell;
+
+    a:not(.button) {
+      color: $lightBlue;
+    }
   }
 
   &.green {
-    background-color: $lightGreen;
+    background-color: $green;
+    color: $eggShell;
+
+    a:not(.button) {
+      color: $lightGreen;
+    }
   }
 
   &.orange {
-    background-color: $lightOrange;
+    background-color: $orange;
+
+    a:not(.button) {
+      color: $black;
+    }
   }
 
   &.black {
     background-color: $black;
     color: $eggShell;
+
+    a:not(.button) {
+      color: $eggShell;
+    }
   }
 
   &.white {
@@ -105,7 +128,7 @@
   }
 
   &.has-image {
-    color: $white;
+    color: $eggShell;
 
     &:before {
       content: '';
@@ -119,12 +142,12 @@
     }
 
     .links {
-      color: $white;
+      color: $eggShell;
     }
 
     .breadcrumbs {
       a {
-        color: $white;
+        color: $eggShell;
       }
     }
   }

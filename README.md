@@ -1,4 +1,4 @@
-# Next.js Boilerplate Starter
+# Names of Things
 
 This is a comprehensive boilerplate starter for building web applications using Next.js. It comes pre-configured with the following technologies:
 
@@ -11,6 +11,11 @@ This is a comprehensive boilerplate starter for building web applications using 
 - Cypress (End-to-end testing)
 - SCSS (Sass for styling)
 - Storybook (Component documentation)
+
+## ENV Requirements
+
+- SITE_URL=localhost:3030
+- GOOGLE_MAP_API_KEY=localhost:3030
 
 ## Getting Started
 
@@ -62,3 +67,11 @@ nextjs-boilerplate/
 
 ## License
 Feel free to customize this README according to your specific project needs.
+
+<br />
+<br />
+<br />
+
+
+#### IMPORTANT NOTE
+**If for some reason Storybook has a problem with `sharp` try running `npm rebuild --verbose sharp`**

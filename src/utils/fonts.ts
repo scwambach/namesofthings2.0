@@ -1,12 +1,12 @@
-import { Roboto, Alfa_Slab_One } from 'next/font/google'
+import { Jost, Vina_Sans } from 'next/font/google'
 
-export const headingFont = Alfa_Slab_One({
+export const headingFont = Vina_Sans({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
 })
 
-export const bodyFont = Roboto({
+export const bodyFont = Jost({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',

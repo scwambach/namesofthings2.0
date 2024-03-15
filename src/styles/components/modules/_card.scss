@@ -17,18 +17,26 @@
       width: 100%;
     }
 
+    a {
+      color: $black;
+    }
+
     &:hover {
       transform: translateY(-$size-4);
       box-shadow: $box-shadow-4;
-      background-color: $lightBlue;
+      background-color: $red;
       opacity: 1;
-
       text-decoration: none;
+      color: $white;
+
+      a:not(.button) {
+        color: $white;
+      }
     }
 
     &.primary {
       &:hover {
-        background-color: $lightBlue;
+        background-color: $red;
         color: $black;
       }
     }

@@ -6,19 +6,23 @@
   }
 
   &.red {
-    background-color: $lightRed;
+    background-color: $red;
+    color: $white;
   }
 
   &.blue {
-    background-color: $lightBlue;
+    background-color: $blue;
+    color: $white;
   }
 
   &.green {
-    background-color: $lightGreen;
+    background-color: $green;
+    color: $white;
   }
 
   &.orange {
-    background-color: $lightOrange;
+    background-color: $orange;
+    color: $white;
   }
 
   blockquote {

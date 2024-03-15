@@ -1,5 +1,4 @@
 import { ButtonProps } from '@utils/types'
-import { headingFont } from '@utils/fonts'
 import { IconSelector } from '@components/utility'
 import { LinkObject } from '@components/modules'
 
@@ -28,9 +27,7 @@ export const Button = ({
   type = 'link',
   unstyled,
 }: ButtonProps) => {
-  const classList = `button ${
-    headingFont.className
-  }${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}${
+  const classList = `button${theme && !unstyled ? ` ${theme}` : ''}${className ? ` ${className}` : ''}${unstyled ? ' unstyled' : ''}${
     small ? ' small' : ''
   }${disabled ? ' disabled' : ''}`
   return (

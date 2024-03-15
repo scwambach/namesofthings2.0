@@ -2,7 +2,7 @@ main,
 body {
   line-height: $line-height-base;
   color: $black;
-  font-family: 'Roboto', sans-serif;
+  font-size: $size-20;
 }
 
 h1,
@@ -19,7 +19,6 @@ blockquote {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'Roboto', sans-serif;
 
   &:first-child {
     margin-top: 0;

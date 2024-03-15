@@ -1,5 +1,6 @@
 import * as Block from '@components/blocks'
 import * as Module from '@components/modules'
+import { bodyFont } from '@utils/fonts'
 
 export const BlockFactory = (props: any) => {
   return (
@@ -15,6 +16,7 @@ export const BlockFactory = (props: any) => {
             {...object}
             componentId={uniqueId}
             key={uniqueId}
+            className={bodyFont.className}
             info={object._type === 'ContactBlock' && props.global.contact}
           />
         )
