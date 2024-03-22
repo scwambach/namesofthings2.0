@@ -4,7 +4,7 @@ import ReactSelect from 'react-select'
 import { CaretDown, CheckSquare, RadioButton } from '@phosphor-icons/react'
 import { FieldProps } from '@utils/types'
 import { Flex, Grid, Markdown, IconSelector } from '@components/utility'
-import { bodyFont, headingFont } from '@utils/fonts'
+import { bodyFont } from '@utils/fonts'
 
 const Label = ({
   label,
@@ -16,7 +16,7 @@ const Label = ({
   return (
     <Flex direction="column" gap="micro">
       <span
-        className={`label ${headingFont.className}`}
+        className={`label ${bodyFont.className}`}
         dangerouslySetInnerHTML={{
           __html: label,
         }}
