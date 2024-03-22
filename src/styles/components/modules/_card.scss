@@ -37,22 +37,19 @@
 
     &.primary {
       &:hover {
-        background-color: $red;
-        color: $black;
+        background-color: $primary;
       }
     }
 
     &.secondary {
       &:hover {
-        background-color: $lightGreen;
-        color: $black;
+        background-color: $secondary;
       }
     }
 
     &.tertiary {
       &:hover {
-        background-color: $lightOrange;
-        color: $black;
+        background-color: $tertiary;
       }
     }
   }

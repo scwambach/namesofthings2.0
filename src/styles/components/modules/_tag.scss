@@ -4,21 +4,21 @@
   font-size: $size-12;
   letter-spacing: $size-1;
   font-weight: 800;
-  color: $black;
+  color: $white;
 
   a {
-    color: $black;
+    color: $white;
   }
 
   &.primary {
-    background-color: $lightBlue;
+    background-color: $primary;
   }
 
   &.secondary {
-    background-color: $lightGreen;
+    background-color: $secondary;
   }
 
   &.tertiary {
-    background-color: $lightOrange;
+    background-color: $tertiary;
   }
 }

@@ -1,6 +1,5 @@
 import { Banner } from '@components/blocks/Banner'
 import type { Meta, StoryObj } from '@storybook/react'
-import ForegroundImage from '@images/marketing.png'
 
 const meta: Meta<typeof Banner> = {
   title: 'Components/Blocks/Banner',
@@ -145,37 +144,6 @@ export const White: Story = {
       'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
     headingLevel: 1,
     subheading: 'Quisque iaculis tincidunt',
-  },
-}
-
-export const WidthForeground: Story = {
-  args: {
-    bgColor: 'blue',
-    crumbs: {
-      current: 'Quisque iaculis tincidunt',
-      items: [
-        {
-          label: 'Home',
-          href: '/',
-        },
-      ],
-    },
-    heading: 'Quisque iaculis tincidunt',
-    links: [
-      {
-        label: 'Learn More',
-        href: '/learn-more',
-      },
-    ],
-    message:
-      'Suspendisse facilisis in est vel consectetur. Integer eget malesuada dui. Maecenas vel egestas quam, a pretium mi. Curabitur sit amet.',
-    headingLevel: 1,
-    subheading: 'Quisque iaculis tincidunt',
-    foregroundMedia: {
-      _type: 'ImageObject',
-      blockType: 'module',
-      ...ForegroundImage,
-    },
   },
 }
 

@@ -8,7 +8,7 @@
   }
 
   .title {
-    font-size: $size-20;
+    font-size: $size-32;
     margin: 0;
   }
 
@@ -18,6 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: $white;
     border-radius: 100%;
 
     + div {
@@ -35,19 +36,19 @@
 
   &.primary {
     .icon {
-      background-color: $lightBlue;
+      background-color: $primary;
     }
   }
 
   &.secondary {
     .icon {
-      background-color: $lightGreen;
+      background-color: $secondary;
     }
   }
 
   &.tertiary {
     .icon {
-      background-color: $lightOrange;
+      background-color: $tertiary;
     }
   }
 

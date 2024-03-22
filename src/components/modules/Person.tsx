@@ -2,7 +2,6 @@ import { PersonProps } from '@utils/types'
 import * as Icon from '@phosphor-icons/react'
 import { IconSelector, Flex, Box } from '@components/utility'
 import { LinkObject, ImageObject } from '@components/modules'
-import { headingFont } from '@utils/fonts'
 
 export const Person = ({
   className,
@@ -25,20 +24,22 @@ export const Person = ({
         <Box overflow className="image">
           <ImageObject {...image} isBackground />
         </Box>
-        <p className={headingFont.className}>
+        <p>
           {firstName} {lastName}
         </p>
         {title && (
           <p>
-            {title}
-            <>
-              {' '}
-              {company && (
-                <>
-                  <span> @ {company}</span>
-                </>
-              )}
-            </>
+            <strong>
+              {title}
+              <>
+                {' '}
+                {company && (
+                  <>
+                    <span> @ {company}</span>
+                  </>
+                )}
+              </>
+            </strong>
           </p>
         )}
 

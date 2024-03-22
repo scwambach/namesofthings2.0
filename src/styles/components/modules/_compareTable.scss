@@ -19,25 +19,25 @@
   }
 
   &.primary {
-    background-color: $lightBlue;
+    background-color: lighten($color: $primary, $amount: 54);
 
     &.highlight {
-      background: $blue;
       color: $white;
+      background: $primary;
     }
   }
   &.secondary {
-    background-color: $lightGreen;
+    background-color: lighten($color: $secondary, $amount: 28);
 
     &.highlight {
-      background: $green;
+      background: $secondary;
     }
   }
   &.tertiary {
-    background-color: $lightOrange;
+    background-color: lighten($color: $tertiary, $amount: 65);
 
     &.highlight {
-      background: $orange;
+      background: $tertiary;
     }
   }
 }

@@ -2,7 +2,7 @@
   @include radius4;
   align-items: center;
   appearance: none;
-  background: $purple;
+  background: $primary;
   border: none;
   color: $white;
   cursor: pointer;
@@ -27,10 +27,9 @@
   &:hover {
     @media screen and (min-width: ($sm)) {
       text-decoration: none;
-      background-color: $lightPurple;
       opacity: 1;
-      color: $black;
       box-shadow: $box-shadow-1;
+      background-color: lighten($color: $primary, $amount: 7);
     }
   }
 
@@ -44,20 +43,18 @@
   }
 
   &.secondary {
-    background-color: $green;
+    background-color: $secondary;
 
     &:hover {
-      background-color: $lightGreen;
-      color: $black;
+      background-color: lighten($color: $secondary, $amount: 15);
     }
   }
 
   &.tertiary {
-    background-color: $red;
+    background-color: $tertiary;
 
     &:hover {
-      background-color: $lightRed;
-      color: $black;
+      background-color: lighten($color: $tertiary, $amount: 10);
     }
   }
 }

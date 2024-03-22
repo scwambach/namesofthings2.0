@@ -5,8 +5,7 @@ import {
   ImageObject,
   Tag,
 } from '@components/modules'
-import { Box, Container, Flex, Grid, Heading } from '@components/utility'
-import { BlockFactory } from '@components/utility/BlockFactory'
+import { Container, Flex, Grid, Heading } from '@components/utility'
 import { compileAuthorNames } from '@utils/compileAuthorNames'
 import { parseMarkdownToHTML } from '@utils/parseMarkdownToHTML'
 import { BannerProps } from '@utils/types'
@@ -107,18 +106,6 @@ export const Banner = ({
           )}
         </div>
       </Flex>
-      {foregroundMedia && (
-        <Flex alignItems="center" justifyContent="center">
-          <Box
-            overflow
-            style={{
-              width: '100%',
-            }}
-          >
-            <BlockFactory items={[foregroundMedia]} />
-          </Box>
-        </Flex>
-      )}
     </>
   )
 

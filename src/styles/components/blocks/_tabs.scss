@@ -44,17 +44,17 @@
               text-decoration: none;
 
               &.primary {
-                background-color: $blue;
+                background-color: $primary;
                 color: $white;
               }
 
               &.secondary {
-                background-color: $green;
+                background-color: $secondary;
                 color: $white;
               }
 
               &.tertiary {
-                background-color: $orange;
+                background-color: $tertiary;
                 color: $white;
               }
 
@@ -78,17 +78,17 @@
         padding: $size-8;
 
         &.primary {
-          background-color: $lightBlue;
+          background-color: $primary;
           color: darken($blue, 10%);
         }
 
         &.secondary {
-          background-color: $lightGreen;
+          background-color: $secondary;
           color: $green;
         }
 
         &.tertiary {
-          background-color: $lightOrange;
+          background-color: $tertiary;
           color: darken($orange, 30%);
         }
 

@@ -44,7 +44,7 @@ export const Stat = ({
       <Flex columnBreak="xxs" gap="xs">
         {icon && (
           <div className="icon">
-            <IconSelector icon={icon} size={32} />
+            <IconSelector icon={icon} size={32} weight="thin" />
           </div>
         )}
         <Flex direction="column" gap="xxs">
