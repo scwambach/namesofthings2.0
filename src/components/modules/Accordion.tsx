@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@components/modules'
 import { Box } from '@components/utility'
+import { headingFont } from '@utils/fonts'
 import { AccordionProps } from '@utils/types'
 import { useEffect, useRef, useState } from 'react'
 
@@ -51,6 +52,7 @@ export const Accordion = ({
       <Button
         type="button"
         theme={theme}
+        className={headingFont.className}
         suffixIcon="CaretDown"
         onClick={() => setOpen(!open)}
         ariaExpanded={open}

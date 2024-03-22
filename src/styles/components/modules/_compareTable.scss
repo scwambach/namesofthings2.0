@@ -1,6 +1,7 @@
 .compareTable {
   padding: $size-32 $size-16;
   max-width: $size-200 + $size-164;
+  text-align: center;
 
   .heading {
     font-size: $size-52;
@@ -14,7 +15,7 @@
   }
 
   &.highlight {
-    color: $eggShell;
+    color: $white;
   }
 
   &.primary {
@@ -22,7 +23,7 @@
 
     &.highlight {
       background: $blue;
-      color: $eggShell;
+      color: $white;
     }
   }
   &.secondary {

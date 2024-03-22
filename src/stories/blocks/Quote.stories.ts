@@ -20,9 +20,9 @@ export const Blue: Story = {
   },
 }
 
-export const Green: Story = {
+export const Red: Story = {
   args: {
-    bgColor: 'green',
+    bgColor: 'red',
     cite: 'John Doe',
     quote:
       'Aenean faucibus elit eget metus faucibus accumsan. Vestibulum non consequat est. Aenean malesuada sagittis nec ac nulla.',
@@ -30,18 +30,18 @@ export const Green: Story = {
   },
 }
 
-export const Red: Story = {
+export const Black: Story = {
   args: {
-    bgColor: 'red',
+    bgColor: 'black',
     quote:
       'Aenean faucibus elit eget metus faucibus accumsan. Vestibulum non consequat est. Aenean malesuada sagittis nec ac nulla.',
     testId: 'quote-test',
   },
 }
 
-export const Orange: Story = {
+export const White: Story = {
   args: {
-    bgColor: 'orange',
+    bgColor: 'white',
     cite: 'John Doe',
     quote:
       'Aenean faucibus elit eget metus faucibus accumsan. Vestibulum non consequat est. Aenean malesuada sagittis nec ac nulla.',
@@ -51,7 +51,7 @@ export const Orange: Story = {
 
 export const PersonQuote: Story = {
   args: {
-    bgColor: 'green',
+    bgColor: 'black',
     cite: 'John Doe',
     person: {
       firstName: 'John',

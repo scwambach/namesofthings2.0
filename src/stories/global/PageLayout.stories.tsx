@@ -16,7 +16,7 @@ export const PageLayout: Story = {
   args: {
     children: <Banner heading="Placeholder content" />,
     global: {
-      siteTitle: 'Next.js Starter Boilerplate',
+      siteTitle: 'Names of Things',
       siteDescription: 'A starter boilerplate for Next.js',
       favicon: '/favicon.ico',
       contact: {

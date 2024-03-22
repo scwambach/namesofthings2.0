@@ -1,9 +1,11 @@
 html {
   font-family: '__Jost_b5e391', '__Jost_Fallback_b5e391', sans-serif;
   background-color: $black;
+  color: $white;
 
   main {
-    background-color: $eggShell;
+    background-color: $black;
+    color: $white;
   }
 }
 
@@ -162,5 +164,38 @@ html {
     height: 0;
     width: 0;
     overflow: hidden;
+  }
+}
+
+.iconBorder {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .inner {
+    position: relative;
+    width: 16760px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+
+    svg {
+      padding: $size-7;
+      &:nth-child(5n - 4) {
+        background-color: $red;
+      }
+      &:nth-child(5n - 3) {
+        background-color: $orange;
+      }
+      &:nth-child(5n - 2) {
+        background-color: $blue;
+      }
+      &:nth-child(5n - 1) {
+        background-color: $green;
+      }
+      &:nth-child(5n) {
+        background-color: $purple;
+      }
+    }
   }
 }

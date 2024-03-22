@@ -1,5 +1,5 @@
-import * as Block from '@components/blocks'
 import * as Module from '@components/modules'
+import * as Block from '@components/blocks'
 import { bodyFont } from '@utils/fonts'
 
 export const BlockFactory = (props: any) => {

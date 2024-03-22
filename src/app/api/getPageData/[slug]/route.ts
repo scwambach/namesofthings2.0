@@ -12,29 +12,4 @@ export async function GET({ url }: any) {
       ...data,
     })
   }
-
-  if (slug === 'about') {
-    const data = await import(`@data/aboutPage.json`)
-
-    return NextResponse.json({
-      status: 200,
-      ...data,
-    })
-  }
-
-  if (slug === 'team') {
-    const data = await import(`@data/teamPage.json`)
-    return NextResponse.json({
-      status: 200,
-      ...data,
-    })
-  }
-
-  if (slug === 'contact') {
-    const data = await import(`@data/contactPage.json`)
-    return NextResponse.json({
-      status: 200,
-      ...data,
-    })
-  }
 }

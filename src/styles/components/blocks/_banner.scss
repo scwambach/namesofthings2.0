@@ -64,11 +64,11 @@
 
       &.black {
         background-color: $black;
-        color: $eggShell;
+        color: $white;
       }
 
       &.white {
-        background-color: $eggShell;
+        background-color: $white;
         color: $black;
 
         a:not(.button):not(.tagItem a) {
@@ -86,7 +86,7 @@
 
   &.red {
     background-color: $red;
-    color: $eggShell;
+    color: $white;
 
     a:not(.button):not(.tagItem a) {
       color: $lightRed;
@@ -95,7 +95,7 @@
 
   &.blue {
     background-color: $blue;
-    color: $eggShell;
+    color: $white;
 
     a:not(.button):not(.tagItem a) {
       color: $lightBlue;
@@ -104,7 +104,7 @@
 
   &.green {
     background-color: $green;
-    color: $eggShell;
+    color: $white;
 
     a:not(.button):not(.tagItem a) {
       color: $lightGreen;
@@ -113,19 +113,19 @@
 
   &.black {
     background-color: $black;
-    color: $eggShell;
+    color: $white;
 
     a:not(.button):not(.tagItem a) {
-      color: $eggShell;
+      color: $white;
     }
   }
 
   &.white {
-    background-color: $eggShell;
+    background-color: $white;
   }
 
   &.has-image {
-    color: $eggShell;
+    color: $white;
 
     &:before {
       content: '';
@@ -139,12 +139,12 @@
     }
 
     .links {
-      color: $eggShell;
+      color: $white;
     }
 
     .breadcrumbs {
       a {
-        color: $eggShell;
+        color: $white;
       }
     }
   }

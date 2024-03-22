@@ -13,6 +13,6 @@ type Story = StoryObj<typeof FooterItem>
 export const Footer: Story = {
   args: {
     copy: 'Nam molestie eu ligula et consectetur. Quisque a molestie magna. Suspendisse nunc nisi, condimentum id.',
-    title: 'Next.js Starter Boilerplate',
+    title: 'Names of Things',
   },
 }

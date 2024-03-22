@@ -29,10 +29,6 @@ export const Standard: Story = {
             label: 'Learn More',
             href: '/learn-more',
           },
-          {
-            label: 'Contact Us',
-            href: '/contact-us',
-          },
         ],
       },
       {
@@ -46,10 +42,6 @@ export const Standard: Story = {
           {
             label: 'Learn More',
             href: '/learn-more',
-          },
-          {
-            label: 'Contact Us',
-            href: '/contact-us',
           },
         ],
       },
@@ -65,10 +57,6 @@ export const Standard: Story = {
             label: 'Learn More',
             href: '/learn-more',
           },
-          {
-            label: 'Contact Us',
-            href: '/contact-us',
-          },
         ],
       },
       {
@@ -82,10 +70,6 @@ export const Standard: Story = {
           {
             label: 'Learn More',
             href: '/learn-more',
-          },
-          {
-            label: 'Contact Us',
-            href: '/contact-us',
           },
         ],
       },

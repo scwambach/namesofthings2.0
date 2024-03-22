@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Header, Footer } from '@components/global'
 import { SkipToMain } from '@components/utility'
 import { GlobalProps } from '@utils/types'
+import { IconBorder } from '@components/modules/IconBorder'
 
 export const PageLayout = ({
   children,
@@ -16,10 +17,10 @@ export const PageLayout = ({
     <main className={pageClasses}>
       <SkipToMain />
       <Header menu={global.navigation} title={global.siteTitle} />
+      <IconBorder />
       <div id="bodyContent" tabIndex={-1}>
         {children}
       </div>
-
       <Footer title={global.siteTitle} copy={global.footerCopy} />
     </main>
   )

@@ -1,11 +1,10 @@
 import { Avatar } from '@components/modules'
 import { Container, Flex, Markdown } from '@components/utility'
 import { Minus, Quotes } from '@phosphor-icons/react/dist/ssr'
-import { headingFont } from '@utils/fonts'
 import { QuoteProps } from '@utils/types'
 
 export const Quote = ({
-  bgColor = 'green',
+  bgColor = 'black',
   cite,
   className,
   componentId,
@@ -25,7 +24,7 @@ export const Quote = ({
           <Markdown>{quote}</Markdown>
         </blockquote>
         {cite && !person && (
-          <cite className={headingFont.className}>
+          <cite>
             <Minus weight="bold" size={16} /> {cite}
           </cite>
         )}

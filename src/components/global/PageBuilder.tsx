@@ -1,5 +1,5 @@
 import { BlockFactory } from '@components/utility/BlockFactory'
-import { PageLayout } from './PageLayout'
+import { PageLayout } from '@components/global/PageLayout'
 
 export const PageBuilder = ({
   pageData,

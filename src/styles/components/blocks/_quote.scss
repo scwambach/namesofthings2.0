@@ -15,14 +15,14 @@
     color: $white;
   }
 
-  &.green {
-    background-color: $green;
+  &.black {
+    background-color: $black;
     color: $white;
   }
 
-  &.orange {
-    background-color: $orange;
-    color: $white;
+  &.white {
+    background-color: $white;
+    color: $black;
   }
 
   blockquote {
