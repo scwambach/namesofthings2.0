@@ -1,0 +1,1 @@
+export { BandName } from './BandName'

@@ -6,11 +6,12 @@ export const BlockFactory = (props: any) => {
   return (
     <>
       {props.items?.map((object: any, index: number) => {
+        const blockType = object.blockType === 'module' ? 'module' : 'block'
         const Component =
-          object.blockType === 'module'
+          blockType === 'module'
             ? Module[object._type as keyof typeof Module]
             : Block[object._type as keyof typeof Block]
-        const uniqueId = `${object.blockType}_${object._type}_${index}`
+        const uniqueId = `${blockType}_${object._type}_${index}`
         return (
           <Component
             {...object}

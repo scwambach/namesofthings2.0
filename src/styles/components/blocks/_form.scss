@@ -1,5 +1,7 @@
 .form {
-  @include vertical-spacing-margin;
+  @include vertical-spacing-padding;
+  background-color: $eggShell;
+  color: $black;
 
   button[type='submit'] {
     margin-top: $size-32;

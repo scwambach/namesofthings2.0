@@ -507,6 +507,8 @@ export interface EventsProps extends BlockProps {
 
 export interface FormProps extends BlockProps {
   children?: ReactNode
+  formAction?: string
+  formId: string
   submitCopy?: string
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void
   onChange?: (e: FormEvent<HTMLFieldSetElement>) => void

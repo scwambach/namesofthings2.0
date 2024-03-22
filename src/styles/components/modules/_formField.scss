@@ -7,7 +7,7 @@
     font-size: $size-16;
     box-shadow: none;
     display: block;
-    border: $size-1 solid $lightBlue;
+    border: $size-1 solid $black;
     padding: $size-4 $size-8;
     min-height: $size-32;
     outline-offset: $size-2;
@@ -160,7 +160,7 @@
       cursor: pointer;
       width: 100%;
       padding: $size-16;
-      border: $size-1 solid $lightBlue;
+      border: $size-1 solid $black;
       background-color: $white;
 
       &:hover {
@@ -186,7 +186,7 @@
 
     [class$='-control'] {
       min-height: $size-32;
-      border: $size-1 solid $lightBlue;
+      border: $size-1 solid $black;
       @include radius4;
     }
 

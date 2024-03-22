@@ -1,0 +1,504 @@
+{
+  "genres": [
+    {
+      "copy": "Please select a genre",
+      "id": "default",
+      "value": ""
+    },
+    {
+      "copy": "Pop",
+      "id": "pop",
+      "value": "Pop"
+    },
+    {
+      "copy": "Rock",
+      "id": "rock",
+      "value": "Rock"
+    },
+    {
+      "copy": "Hip Hop",
+      "id": "hip-hop",
+      "value": "Hip Hop"
+    },
+    {
+      "copy": "Country",
+      "id": "country",
+      "value": "Country"
+    },
+    {
+      "copy": "Jazz",
+      "id": "jazz",
+      "value": "Jazz"
+    },
+    {
+      "copy": "Blues",
+      "id": "blues",
+      "value": "Blues"
+    },
+    {
+      "copy": "Electronic",
+      "id": "electronic",
+      "value": "Electronic"
+    },
+    {
+      "copy": "R&B (Rhythm and Blues)",
+      "id": "r-and-b",
+      "value": "R And B"
+    },
+    {
+      "copy": "Classical",
+      "id": "classical",
+      "value": "Classical"
+    },
+    {
+      "copy": "Folk",
+      "id": "folk",
+      "value": "Folk"
+    },
+    {
+      "copy": "Reggae",
+      "id": "reggae",
+      "value": "Reggae"
+    },
+    {
+      "copy": "Punk",
+      "id": "punk",
+      "value": "Punk"
+    },
+    {
+      "copy": "Metal",
+      "id": "metal",
+      "value": "Metal"
+    },
+    {
+      "copy": "Funk",
+      "id": "funk",
+      "value": "Funk"
+    },
+    {
+      "copy": "Alternative",
+      "id": "alternative",
+      "value": "Alternative"
+    },
+    {
+      "copy": "Soul",
+      "id": "soul",
+      "value": "Soul"
+    },
+    {
+      "copy": "Gospel",
+      "id": "gospel",
+      "value": "Gospel"
+    },
+    {
+      "copy": "Indie",
+      "id": "indie",
+      "value": "Indie"
+    },
+    {
+      "copy": "EDM (Electronic Dance Music)",
+      "id": "edm",
+      "value": "Edm"
+    },
+    {
+      "copy": "Rap",
+      "id": "rap",
+      "value": "Rap"
+    },
+    {
+      "copy": "Dancehall",
+      "id": "dancehall",
+      "value": "Dancehall"
+    },
+    {
+      "copy": "Ska",
+      "id": "ska",
+      "value": "Ska"
+    },
+    {
+      "copy": "Disco",
+      "id": "disco",
+      "value": "Disco"
+    },
+    {
+      "copy": "Ambient",
+      "id": "ambient",
+      "value": "Ambient"
+    },
+    {
+      "copy": "Reggaeton",
+      "id": "reggaeton",
+      "value": "Reggaeton"
+    },
+    {
+      "copy": "Techno",
+      "id": "techno",
+      "value": "Techno"
+    },
+    {
+      "copy": "House",
+      "id": "house",
+      "value": "House"
+    },
+    {
+      "copy": "Grunge",
+      "id": "grunge",
+      "value": "Grunge"
+    },
+    {
+      "copy": "World Music",
+      "id": "world-music",
+      "value": "World Music"
+    },
+    {
+      "copy": "Dub",
+      "id": "dub",
+      "value": "Dub"
+    },
+    {
+      "copy": "Trance",
+      "id": "trance",
+      "value": "Trance"
+    },
+    {
+      "copy": "New Wave",
+      "id": "new-wave",
+      "value": "New Wave"
+    },
+    {
+      "copy": "Psychedelic Rock",
+      "id": "psychedelic-rock",
+      "value": "Psychedelic Rock"
+    },
+    {
+      "copy": "Progressive Rock",
+      "id": "progressive-rock",
+      "value": "Progressive Rock"
+    },
+    {
+      "copy": "Hard Rock",
+      "id": "hard-rock",
+      "value": "Hard Rock"
+    },
+    {
+      "copy": "Trap",
+      "id": "trap",
+      "value": "Trap"
+    },
+    {
+      "copy": "Bluegrass",
+      "id": "bluegrass",
+      "value": "Bluegrass"
+    },
+    {
+      "copy": "Country Rock",
+      "id": "country-rock",
+      "value": "Country Rock"
+    },
+    {
+      "copy": "Baroque",
+      "id": "baroque",
+      "value": "Baroque"
+    },
+    {
+      "copy": "Glam Rock",
+      "id": "glam-rock",
+      "value": "Glam Rock"
+    },
+    {
+      "copy": "Shoegaze",
+      "id": "shoegaze",
+      "value": "Shoegaze"
+    },
+    {
+      "copy": "Post-Punk",
+      "id": "post-punk",
+      "value": "Post Punk"
+    },
+    {
+      "copy": "Industrial",
+      "id": "industrial",
+      "value": "Industrial"
+    },
+    {
+      "copy": "Goth Rock",
+      "id": "goth-rock",
+      "value": "Goth Rock"
+    },
+    {
+      "copy": "Avant-Garde",
+      "id": "avant-garde",
+      "value": "Avant Garde"
+    },
+    {
+      "copy": "Noise",
+      "id": "noise",
+      "value": "Noise"
+    },
+    {
+      "copy": "Experimental",
+      "id": "experimental",
+      "value": "Experimental"
+    },
+    {
+      "copy": "Celtic",
+      "id": "celtic",
+      "value": "Celtic"
+    },
+    {
+      "copy": "Electro Swing",
+      "id": "electro-swing",
+      "value": "Electro Swing"
+    },
+    {
+      "copy": "Krautrock",
+      "id": "krautrock",
+      "value": "Krautrock"
+    },
+    {
+      "copy": "Synthwave",
+      "id": "synthwave",
+      "value": "Synthwave"
+    },
+    {
+      "copy": "Vaporwave",
+      "id": "vaporwave",
+      "value": "Vaporwave"
+    },
+    {
+      "copy": "Breakbeat",
+      "id": "breakbeat",
+      "value": "Breakbeat"
+    },
+    {
+      "copy": "Drum and Bass",
+      "id": "drum-and-bass",
+      "value": "Drum And Bass"
+    },
+    {
+      "copy": "Ambient House",
+      "id": "ambient-house",
+      "value": "Ambient House"
+    },
+    {
+      "copy": "Chillwave",
+      "id": "chillwave",
+      "value": "Chillwave"
+    },
+    {
+      "copy": "J-pop (Japanese Pop)",
+      "id": "j-pop",
+      "value": "J Pop"
+    },
+    {
+      "copy": "K-pop (Korean Pop)",
+      "id": "k-pop",
+      "value": "K Pop"
+    },
+    {
+      "copy": "Cumbia",
+      "id": "cumbia",
+      "value": "Cumbia"
+    },
+    {
+      "copy": "Mariachi",
+      "id": "mariachi",
+      "value": "Mariachi"
+    },
+    {
+      "copy": "Bossa Nova",
+      "id": "bossa-nova",
+      "value": "Bossa Nova"
+    },
+    {
+      "copy": "Tango",
+      "id": "tango",
+      "value": "Tango"
+    },
+    {
+      "copy": "Salsa",
+      "id": "salsa",
+      "value": "Salsa"
+    },
+    {
+      "copy": "Mambo",
+      "id": "mambo",
+      "value": "Mambo"
+    },
+    {
+      "copy": "Samba",
+      "id": "samba",
+      "value": "Samba"
+    },
+    {
+      "copy": "Flamenco",
+      "id": "flamenco",
+      "value": "Flamenco"
+    },
+    {
+      "copy": "Mariachi",
+      "id": "mariachi",
+      "value": "Mariachi"
+    },
+    {
+      "copy": "Bolero",
+      "id": "bolero",
+      "value": "Bolero"
+    },
+    {
+      "copy": "Bhangra",
+      "id": "bhangra",
+      "value": "Bhangra"
+    },
+    {
+      "copy": "Hindustani Classical",
+      "id": "hindustani-classical",
+      "value": "Hindustani Classical"
+    },
+    {
+      "copy": "Carnatic Classical",
+      "id": "carnatic-classical",
+      "value": "Carnatic Classical"
+    },
+    {
+      "copy": "Qawwali",
+      "id": "qawwali",
+      "value": "Qawwali"
+    },
+    {
+      "copy": "Bollywood",
+      "id": "bollywood",
+      "value": "Bollywood"
+    },
+    {
+      "copy": "Chiptune",
+      "id": "chiptune",
+      "value": "Chiptune"
+    },
+    {
+      "copy": "IDM (Intelligent Dance Music)",
+      "id": "idm",
+      "value": "Idm"
+    },
+    {
+      "copy": "Darkwave",
+      "id": "darkwave",
+      "value": "Darkwave"
+    },
+    {
+      "copy": "Witch House",
+      "id": "witch-house",
+      "value": "Witch House"
+    },
+    {
+      "copy": "Neo-Soul",
+      "id": "neo-soul",
+      "value": "Neo Soul"
+    },
+    {
+      "copy": "Post-Rock",
+      "id": "post-rock",
+      "value": "Post Rock"
+    },
+    {
+      "copy": "Math Rock",
+      "id": "math-rock",
+      "value": "Math Rock"
+    },
+    {
+      "copy": "Emo",
+      "id": "emo",
+      "value": "Emo"
+    },
+    {
+      "copy": "Screamo",
+      "id": "screamo",
+      "value": "Screamo"
+    },
+    {
+      "copy": "Nu Metal",
+      "id": "nu-metal",
+      "value": "Nu Metal"
+    },
+    {
+      "copy": "Death Metal",
+      "id": "death-metal",
+      "value": "Death Metal"
+    },
+    {
+      "copy": "Black Metal",
+      "id": "black-metal",
+      "value": "Black Metal"
+    },
+    {
+      "copy": "Power Metal",
+      "id": "power-metal",
+      "value": "Power Metal"
+    },
+    {
+      "copy": "Symphonic Metal",
+      "id": "symphonic-metal",
+      "value": "Symphonic Metal"
+    },
+    {
+      "copy": "Drone",
+      "id": "drone",
+      "value": "Drone"
+    },
+    {
+      "copy": "Glitch",
+      "id": "glitch",
+      "value": "Glitch"
+    },
+    {
+      "copy": "Nu Jazz",
+      "id": "nu-jazz",
+      "value": "Nu Jazz"
+    },
+    {
+      "copy": "Acid Jazz",
+      "id": "acid-jazz",
+      "value": "Acid Jazz"
+    },
+    {
+      "copy": "Gypsy Jazz",
+      "id": "gypsy-jazz",
+      "value": "Gypsy Jazz"
+    },
+    {
+      "copy": "Dixieland",
+      "id": "dixieland",
+      "value": "Dixieland"
+    },
+    {
+      "copy": "Big Band",
+      "id": "big-band",
+      "value": "Big Band"
+    },
+    {
+      "copy": "Swing Revival",
+      "id": "swing-revival",
+      "value": "Swing Revival"
+    },
+    {
+      "copy": "Lounge",
+      "id": "lounge",
+      "value": "Lounge"
+    },
+    {
+      "copy": "Exotica",
+      "id": "exotica",
+      "value": "Exotica"
+    },
+    {
+      "copy": "Surf Rock",
+      "id": "surf-rock",
+      "value": "Surf Rock"
+    },
+    {
+      "copy": "Zeuhl",
+      "id": "zeuhl",
+      "value": "Zeuhl"
+    }
+  ]
+}
