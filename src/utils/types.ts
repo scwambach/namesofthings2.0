@@ -313,17 +313,6 @@ export interface EventProps extends ComponentProps {
 }
 
 export interface FieldProps extends Omit<ComponentProps, 'componentId'> {
-  id: string
-  label: string
-  type?: FieldTypes
-  className?: string
-  defaultValue?: string
-  description?: string
-  disabled?: boolean
-  placeholder?: string
-  readOnly?: boolean
-  required?: boolean
-  value?: string
   choices?: {
     id: string
     copy: string
@@ -334,10 +323,21 @@ export interface FieldProps extends Omit<ComponentProps, 'componentId'> {
     label: string
     value?: string
   }[]
+  description?: string
+  className?: string
+  defaultValue?: string
+  value?: string
+  disabled?: boolean
+  id: string
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
   onChangeArea?: (e: ChangeEvent<HTMLTextAreaElement>) => void
   onChangeSelect?: (e: ChangeEvent<HTMLSelectElement>) => void
+  label: string
+  placeholder?: string
+  readOnly?: boolean
+  required?: boolean
   choiceGridColumns?: ColumnSize
+  type?: FieldTypes
 }
 
 export interface HeadingItem {
@@ -506,10 +506,8 @@ export interface EventsProps extends BlockProps {
 }
 
 export interface FormProps extends BlockProps {
-  formId: string
-  fields?: FieldProps[]
+  children?: ReactNode
   submitCopy?: string
-  formAction?: string
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void
   onChange?: (e: FormEvent<HTMLFieldSetElement>) => void
 }
@@ -626,7 +624,7 @@ export type BreakNames =
   | 'xl'
   | 'xxl'
 
-export type Colors = 'blue' | 'red' | 'black' | 'green' | 'white'
+export type Colors = 'blue' | 'red' | 'black' | 'white'
 
 export type AlertTypes = 'success' | 'warning' | 'error' | 'info'
 
@@ -679,35 +677,34 @@ export type ContainerClasses =
 export type Themes = 'primary' | 'secondary' | 'tertiary'
 
 export type Elements =
-  | 'a'
+  | 'div'
+  | 'section'
   | 'article'
   | 'aside'
-  | 'button'
-  | 'cite'
-  | 'div'
-  | 'fieldset'
-  | 'figcaption'
-  | 'figure'
+  | 'span'
+  | 'header'
   | 'footer'
+  | 'nav'
+  | 'main'
+  | 'li'
+  | 'ul'
+  | 'ol'
+  | 'p'
+  | 'a'
+  | 'button'
   | 'form'
+  | 'input'
+  | 'label'
+  | 'select'
+  | 'textarea'
+  | 'img'
+  | 'picture'
+  | 'cite'
+  | 'figure'
+  | 'figcaption'
   | 'h1'
   | 'h2'
   | 'h3'
   | 'h4'
   | 'h5'
   | 'h6'
-  | 'header'
-  | 'img'
-  | 'input'
-  | 'label'
-  | 'li'
-  | 'main'
-  | 'nav'
-  | 'ol'
-  | 'p'
-  | 'picture'
-  | 'section'
-  | 'select'
-  | 'span'
-  | 'textarea'
-  | 'ul'
