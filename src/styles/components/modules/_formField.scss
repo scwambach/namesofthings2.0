@@ -16,7 +16,7 @@
     &:focus {
       @media screen and (min-width: ($sm)) {
         outline: none;
-        outline: $size-4 solid $red;
+        outline: $size-4 solid $orange;
       }
     }
   }
@@ -59,7 +59,7 @@
         &.focused {
           @media screen and (min-width: ($sm)) {
             outline: none;
-            outline: $size-4 solid $red;
+            outline: $size-4 solid $orange;
           }
         }
       }
@@ -76,7 +76,7 @@
       &:focus {
         @media screen and (min-width: ($sm)) {
           outline: none;
-          outline: $size-4 solid $red;
+          outline: $size-4 solid $orange;
         }
       }
 

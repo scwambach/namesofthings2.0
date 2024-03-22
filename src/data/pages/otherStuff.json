@@ -1,0 +1,14 @@
+{
+  "title": "Other Stuff",
+  "slug": "other-stuff",
+  "ogImage": "/image2.jpg",
+  "description": "Name some other stuff!",
+  "keywords": ["about", "us", "company", "information"],
+  "pageComponents": [
+    {
+      "_type": "Banner",
+      "heading": "Other Stuff",
+      "subheading": "Don't see what you wanna name on here? Well just do it here!"
+    }
+  ]
+}

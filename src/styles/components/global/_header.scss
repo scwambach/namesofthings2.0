@@ -40,7 +40,7 @@ header {
   .dropdown {
     .menu {
       right: 0;
-      min-width: $size-200;
+      min-width: $size-200 + $size-52;
 
       @media screen and (max-width: ($sm - 1)) {
         position: relative;
