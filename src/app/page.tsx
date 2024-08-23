@@ -1,43 +1,44 @@
-import { PageBuilder } from '@components/global'
-import { GlobalProps } from '@utils/types'
+import { client } from "@utils/sanityClient";
 
 async function getData() {
-  const global = await fetch(`${process.env.SITE_URL}/api/getGlobalData`)
-  const page = await fetch(`${process.env.SITE_URL}/api/getPageData/home`)
-  const globalData = await global.json()
-  const pageData = await page.json()
-  return {
-    globalData,
-    pageData,
-  }
-}
-
-export const revalidate = 0
-
-export async function generateMetadata() {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData()
-
-  const ogImage = pageData.ogImage ? pageData.ogImage : globalData.siteImage
-  const description = pageData.description || globalData.siteDescription
-
-  return {
-    title: pageData.title
-      ? `${pageData.title} | ${globalData.siteTitle}`
-      : globalData.siteTitle,
-    description,
-    openGraph: {
-      images: [ogImage],
-    },
-    icons: {
-      icon: '/favicon.svg',
-    },
-  }
+  const pageData = await client.fetch(`*[_type == "otherName"]`);
+  console.log({ pageData });
+  return pageData;
 }
 
 export default async function Home() {
-  const { globalData, pageData }: { globalData: GlobalProps; pageData: any } =
-    await getData()
+  const data = await getData();
 
-  return <PageBuilder pageData={pageData} globalData={globalData} />
+  const ndjsonFormattedData = data.map((item: any) => {
+    return {
+      _id: item._id,
+      _type: item._type,
+      _createdAt: item._createdAt,
+      _updatedAt: item._updatedAt,
+      _rev: item._rev,
+      ...item,
+    };
+  });
+
+  return (
+    <main>
+      {ndjsonFormattedData.map((item: any) => (
+        <code key={item._id}>
+          <pre
+            style={{
+              fontFamily: "monospace",
+              display: "block",
+              padding: "3px 50px",
+              color: "#88ffbf",
+              backgroundColor: "black",
+              textAlign: "left",
+              whiteSpace: "pre-wrap",
+            }}
+          >
+            {JSON.stringify(item, null, "")},
+          </pre>
+        </code>
+      ))}
+    </main>
+  );
 }
