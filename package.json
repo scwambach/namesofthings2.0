@@ -9,11 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "@portabletext/react": "^3.1.0",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.55.0",
+    "dayjs": "^1.11.13",
     "next": "14.2.6",
     "next-auth": "^4.24.7",
     "next-sanity": "^9.4.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sanity": "^3.55.0",
+    "sanity-plugin-iframe-pane": "^3.1.6",
+    "sanity-plugin-media": "^2.3.2",
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "@types/node": "^20",

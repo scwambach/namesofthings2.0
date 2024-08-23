@@ -1,8 +1,8 @@
+import { Login } from "@components/Login";
 import { client } from "@utils/sanityClient";
 
 async function getData() {
   const pageData = await client.fetch(`*[_type == "otherName"]`);
-  console.log({ pageData });
   return pageData;
 }
 
@@ -22,6 +22,7 @@ export default async function Home() {
 
   return (
     <main>
+      <Login />
       {ndjsonFormattedData.map((item: any) => (
         <code key={item._id}>
           <pre
