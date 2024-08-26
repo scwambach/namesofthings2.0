@@ -1,3 +1,13 @@
+@import "nes-ui-react";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nes-ui-select select {
+  margin-bottom: 0;
+}
+
+.nes-ui-select:after {
+  top: calc(50% - 6px);
+}
