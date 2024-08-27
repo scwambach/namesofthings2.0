@@ -15,3 +15,29 @@
 html.nes-ui * {
   font-size: 1rem;
 }
+
+.suggestions {
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #eee;
+}
+
+.typeOfName {
+  label {
+    margin-top: 0;
+  }
+}

@@ -42,28 +42,12 @@ export default async function Home() {
 
   return (
     <PageLayout>
-      <Login {...props} />
-
-      <code>
-        <pre
-          style={{
-            fontFamily: "monospace",
-            display: "block",
-            padding: "50px",
-            color: "#88ffbf",
-            backgroundColor: "black",
-            textAlign: "left",
-            whiteSpace: "pre-wrap",
-          }}
-        >
-          {JSON.stringify(uniqueTypes, null, "    ")}
-        </pre>
-      </code>
+      <Login {...props} typesOfThings={orderedTypes} />
 
       <ul>
         {firstFiveThings.map((type: any) => (
           <li key={type}>
-            <Link href={`/${slugify(type)}`}>{type}</Link>
+            <Link href={`/list?typeOfName=${type}`}>{type}</Link>
           </li>
         ))}
       </ul>
@@ -71,7 +55,7 @@ export default async function Home() {
       <ul>
         {theRest.map((type: any) => (
           <li key={type}>
-            <Link href={`/${slugify(type)}`}>{type}</Link>
+            <Link href={`/list?typeOfName=${type}`}>{type}</Link>
           </li>
         ))}
       </ul>
