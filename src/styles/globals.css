@@ -11,3 +11,7 @@
 .nes-ui-select:after {
   top: calc(50% - 6px);
 }
+
+html.nes-ui * {
+  font-size: 1rem;
+}

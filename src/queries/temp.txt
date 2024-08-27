@@ -1,0 +1,15 @@
+    "albums": *[_type == "nameOfThing" && typeOfName == "Album"] | order(_createdAt desc) {
+      ${thingObject},
+    },
+    "bands": *[_type == "nameOfThing" && typeOfName == "Band"] | order(_createdAt desc) {
+      ${thingObject},
+    },
+    "albums": *[_type == "nameOfThing" && typeOfName == "Album"] | order(_createdAt desc) {
+      ${thingObject},
+    },
+    "podcasts": *[_type == "nameOfThing" && typeOfName == "Podcast"] | order(_createdAt desc) {
+      ${thingObject},
+    },
+    "other": *[_type == "nameOfThing" && typeOfName != "Band" && typeOfName != "Album" && typeOfName != "Song" && typeOfName != "Podcast"] | order(_createdAt desc) {
+      ${thingObject},
+    },

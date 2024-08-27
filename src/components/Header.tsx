@@ -6,7 +6,7 @@ export const Header = () => {
   const { data: session } = useSession();
 
   return (
-    <header className="flex justify-between px-8 py-2">
+    <header className="flex justify-between px-8 py-4">
       <Text size="xlarge">Names of Things</Text>
       <div>
         {session ? (
