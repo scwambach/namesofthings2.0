@@ -1,7 +1,6 @@
-import { Login } from "@components/Login";
+import { Form } from "@components/Form";
 import { client } from "@utils/sanityClient";
 import { PageLayout } from "@components/PageLayout";
-import { NavToggle } from "@components/NavToggle";
 
 const thingObject = `_id,
 title,
@@ -27,7 +26,7 @@ export default async function Home() {
 
   return (
     <PageLayout allThings={props.allThings}>
-      <Login {...props} typesOfThings={orderOfTypes} />
+      <Form {...props} typesOfThings={orderOfTypes} />
     </PageLayout>
   );
 }

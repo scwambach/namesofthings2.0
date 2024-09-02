@@ -5,15 +5,22 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
+  const router = useRouter();
   const { data: session } = useSession();
   const [open, setOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
+  const handleClick = (typeOfName: string) => {
+    setOpen(false);
+    router.push(`/list?typeOfName=${typeOfName}`);
+  };
+
   return (
     <header className="flex justify-between px-8 py-4">
-      <div className="flex relative gap-4 items-center">
+      <div className="flex relative gap-8 items-center">
         <Button borderInverted fontColor="black" onClick={() => setOpen(!open)}>
           <List size={22} weight="bold" />
         </Button>
@@ -21,14 +28,65 @@ export const Header = () => {
         <Menu
           open={open}
           modal
-          className="top-full "
+          className="top-full bg-black"
           onClose={() => {
             setOpen(false);
           }}
         >
-          <div>test 1</div>
-          <div>test 2</div>
-          <div>test 3</div>
+          <Button
+            onClick={() => {
+              handleClick("band");
+              setOpen(false);
+            }}
+            color="primary"
+          >
+            Band Names
+          </Button>
+          <Button
+            onClick={() => {
+              handleClick("album");
+              setOpen(false);
+            }}
+            color="success"
+          >
+            Album Names
+          </Button>
+          <Button
+            onClick={() => {
+              handleClick("song");
+              setOpen(false);
+            }}
+            color="warning"
+          >
+            Song Names
+          </Button>
+          <Button
+            onClick={() => {
+              handleClick("podcast");
+              setOpen(false);
+            }}
+            color="error"
+          >
+            Podcast Names
+          </Button>
+          <Button
+            onClick={() => {
+              handleClick("horse");
+              setOpen(false);
+            }}
+            color="white"
+          >
+            Horse Names
+          </Button>
+          <Button
+            onClick={() => {
+              handleClick("other");
+              setOpen(false);
+            }}
+            color="primary"
+          >
+            Other Names
+          </Button>
         </Menu>
         <Link href="/" className="logo">
           <Text size="xlarge">N.O.T.</Text>

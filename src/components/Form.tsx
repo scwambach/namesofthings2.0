@@ -1,10 +1,8 @@
 "use client";
 import {
   Button,
-  Col,
   Input,
   PixelIcon,
-  Row,
   Select,
   setDarkModeActivation,
   Text,
@@ -22,7 +20,7 @@ export interface GenreProps {
   title: string;
 }
 
-export const Login = ({
+export const Form = ({
   genres,
   typesOfThings,
 }: {
@@ -46,7 +44,7 @@ export const Login = ({
   }, []);
 
   return (
-    <div className="flex justify-center gap-4 flex-col px-4 w-full max-w-[600px] mx-auto pt-20">
+    <div className="flex justify-center gap-4 flex-col px-4 w-full max-w-[600px] mx-auto py-10">
       {session ? (
         <div>
           <Text size="xlarge" className="pb-10 flex items-center gap-4">
