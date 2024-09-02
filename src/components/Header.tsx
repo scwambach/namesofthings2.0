@@ -38,7 +38,7 @@ export const Header = () => {
               handleClick("band");
               setOpen(false);
             }}
-            color="primary"
+            color="error"
           >
             Band Names
           </Button>
@@ -56,7 +56,7 @@ export const Header = () => {
               handleClick("song");
               setOpen(false);
             }}
-            color="warning"
+            color="primary"
           >
             Song Names
           </Button>
@@ -74,7 +74,7 @@ export const Header = () => {
               handleClick("horse");
               setOpen(false);
             }}
-            color="white"
+            color="success"
           >
             Horse Names
           </Button>
@@ -108,13 +108,24 @@ export const Header = () => {
             <Menu
               open={profileOpen}
               modal
-              className="top-full right-0"
+              className="top-full right-0 bg-black "
               onClose={() => {
                 setProfileOpen(false);
               }}
             >
-              <Button>My Things</Button>
-              <Button onClick={() => signOut()}>Sign Out</Button>
+              <Button
+                className="min-w-[150px]"
+                color="primary"
+                onClick={() => {
+                  router.push("/my-things");
+                  setProfileOpen(false);
+                }}
+              >
+                My Things
+              </Button>
+              <Button color="error" onClick={() => signOut()}>
+                Sign Out
+              </Button>
             </Menu>
           </div>
         ) : (

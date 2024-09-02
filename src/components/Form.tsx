@@ -47,8 +47,7 @@ export const Form = ({
     <div className="flex justify-center gap-4 flex-col px-4 w-full max-w-[600px] mx-auto py-10">
       {session ? (
         <div>
-          <Text size="xlarge" className="pb-10 flex items-center gap-4">
-            <PixelIcon name="pixelicon-sun" />
+          <Text size="large" className="pb-10 flex items-center gap-4">
             Name Something
           </Text>
           <div className="flex justify-between gap-4 items-end">
@@ -81,8 +80,8 @@ export const Form = ({
                   }}
                 >
                   <option>--</option>
-                  {typesOfThings.map((thing) => (
-                    <option value={thing} key={thing}>
+                  {typesOfThings.map((thing, index) => (
+                    <option value={thing} key={`option_${thing} ${index}`}>
                       {thing}
                     </option>
                   ))}
@@ -91,11 +90,12 @@ export const Form = ({
             </div>
 
             <Button
+              color={addNew ? "error" : "primary"}
               onClick={() => {
                 setAddNew(!addNew);
               }}
             >
-              {addNew ? "<- List" : "Add New"}
+              {addNew ? "<- Back" : "Other +"}
             </Button>
           </div>
           <Input
