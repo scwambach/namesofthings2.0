@@ -53,3 +53,10 @@ html.nes-ui * {
     display: none;
   }
 }
+
+.nes-ui-button-wrapper.nes-ui-border-inverted,
+.nes-ui-icon-button-wrapper.nes-ui-border-inverted,
+.nes-ui-button-wrapper,
+.nes-ui-icon-button-wrapper {
+  border-width: 2px;
+}
