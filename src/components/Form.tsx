@@ -29,27 +29,86 @@ export const Form = ({
 }) => {
   const { data: session } = useSession();
 
-  const [typeOfName, setTypeOfName] = useState("");
   const [addNew, setAddNew] = useState(false);
+  const [description, setDescription] = useState<any>();
+  const [genre, setGenre] = useState<any>();
+  const [submitting, setSubmitting] = useState(false);
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [genre, setGenre] = useState("");
-  const [user, setUser] = useState(JSON.stringify(session?.user));
+  const [typeOfName, setTypeOfName] = useState("");
+  const [user, setUser] = useState("");
+  const [status, setStatus] = useState<"Error" | "Success" | "Ready">("Ready");
 
   const isMusic =
     typeOfName === "Band" || typeOfName === "Album" || typeOfName === "Song";
 
   useEffect(() => {
     setDarkModeActivation(false);
-  }, []);
+    if (session) {
+      setUser(JSON.stringify(session.user));
+    }
+  }, [session]);
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    const body = {
+      title,
+      description,
+      typeOfName,
+      genre,
+      user,
+    };
+
+    const response = await fetch("/api/slackSend", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const post = await fetch("/api/sanityPost", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const postResponse = await post;
+
+    const data = await response.json();
+
+    console.log(data, postResponse);
+
+    if (data.status === 200) {
+      setStatus("Success");
+    } else {
+      setStatus("Error");
+    }
+    setSubmitting(false);
+  };
+
+  const clearAll = () => {
+    setTypeOfName("");
+    setTitle("");
+    setDescription(undefined);
+    setGenre(undefined);
+    setAddNew(false);
+  };
 
   return (
     <div className="flex justify-center gap-4 flex-col px-4 w-full max-w-[600px] mx-auto py-10">
-      {session ? (
-        <div>
+      {submitting && (
+        <div className="spinner">
+          <PixelIcon name="pixelicon-sun" />
+        </div>
+      )}
+      {session && status === "Ready" ? (
+        <div className={submitting ? "loading" : ""}>
           <Text size="large" className="pb-10 flex items-center gap-4">
             Name Something
           </Text>
+          {genre}
           <div className="flex justify-between gap-4 items-end">
             <div
               className="typeOfName"
@@ -61,22 +120,29 @@ export const Form = ({
                 <Input
                   type="text"
                   name="typeOfName"
-                  label="What kind of thing are you naming?"
+                  label="What kind of thing are you naming?*"
                   id="typeOfName"
+                  value={typeOfName}
                   className="mb-0"
                   onChange={(e: string) => {
                     setTypeOfName(e);
+                    if (!isMusic) {
+                      setGenre(undefined);
+                    }
                   }}
                 />
               ) : (
                 <Select
                   name="typeOfName"
                   className="m-0 w-full"
-                  label="What kind of thing are you naming?"
+                  label="What kind of thing are you naming?*"
                   id="typeOfName"
                   value={typeOfName}
                   onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                     setTypeOfName(e.target.value);
+                    if (!isMusic) {
+                      setGenre(undefined);
+                    }
                   }}
                 >
                   <option>--</option>
@@ -101,8 +167,9 @@ export const Form = ({
           <Input
             type="text"
             name="title"
-            label="What are you gonna call it?"
+            label="What are you gonna call it?*"
             id="title"
+            value={title}
             onChange={(e: string) => {
               setTitle(e);
             }}
@@ -113,13 +180,14 @@ export const Form = ({
               className="m-0 w-full"
               label="What kind of music is it?"
               id="typeOfName"
+              value={genre}
               onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                 setGenre(e.target.value);
               }}
             >
               <option>--</option>
               {genres.map((genre) => (
-                <option key={genre._id} value={genre.title}>
+                <option key={genre._id} value={genre._id}>
                   {genre.title}
                 </option>
               ))}
@@ -130,10 +198,48 @@ export const Form = ({
             name="description"
             label="Tell me a little about it..."
             id="description"
+            value={description}
             onChange={(e: string) => {
               setDescription(e);
             }}
           />
+          <div className="flex items-center gap-4">
+            <Button
+              disabled={submitting || !title || !typeOfName || !user}
+              color="success"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+            <Button color="warning" onClick={clearAll}>
+              Clear
+            </Button>
+          </div>
+        </div>
+      ) : session && status === "Error" ? (
+        <div>
+          <span className="text-red-500">
+            <Text size="xlarge" className="pb-10 flex items-center gap-4">
+              Oops! You broke it!
+              <br />
+              <br />
+              Try refreshing the page and trying again.
+            </Text>
+          </span>
+        </div>
+      ) : session && status === "Success" ? (
+        <div>
+          <span className="text-green-500">
+            <Text size="xlarge" className="pb-10 flex items-center gap-4">
+              You did it!
+              <br />
+              <br />
+              You named a thing!
+              <br />
+              <br />
+              Refresh the page to name another thing.
+            </Text>
+          </span>
         </div>
       ) : (
         <>

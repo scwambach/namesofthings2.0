@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .nes-ui-select select {
   margin-bottom: 0;
 }
@@ -59,4 +68,19 @@ html.nes-ui * {
 .nes-ui-button-wrapper,
 .nes-ui-icon-button-wrapper {
   border-width: 2px;
+}
+
+.loading {
+  opacity: 0.3;
+}
+
+.spinner .nes-ui-pixelicon.nes-ui-is-size-medium * {
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  transform: translate(-50%, -50%);
 }
