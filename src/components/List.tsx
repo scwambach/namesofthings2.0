@@ -30,6 +30,7 @@ export const List = ({
             const isLast = index === items.length - 1;
             return (
               <li
+                id={thing._id}
                 className={`list-decimal${!isLast ? " border-b-2 border-black pb-8 mb-8" : ""}`}
                 key={thing._id}
               >
