@@ -1,13 +1,6 @@
-import { Form } from "@components/Form";
 import { client } from "@utils/sanityClient";
 import { PageLayout } from "@components/PageLayout";
-import { List } from "./List";
-
-const thingObject = `_id,
-title,
-description,
-typeOfName,
-"genre": genre->title`;
+import { MyList } from "./MyList";
 
 async function getData() {
   const pageData = await client.fetch(`{
@@ -25,7 +18,7 @@ export default async function MyThings() {
 
   return (
     <PageLayout allThings={props.allThings}>
-      <List />
+      <MyList />
     </PageLayout>
   );
 }

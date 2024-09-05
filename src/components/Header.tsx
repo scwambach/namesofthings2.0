@@ -35,7 +35,7 @@ export const Header = () => {
         >
           <Button
             onClick={() => {
-              handleClick("band");
+              handleClick("Band");
               setOpen(false);
             }}
             color="error"
@@ -44,7 +44,7 @@ export const Header = () => {
           </Button>
           <Button
             onClick={() => {
-              handleClick("album");
+              handleClick("Album");
               setOpen(false);
             }}
             color="success"
@@ -53,7 +53,7 @@ export const Header = () => {
           </Button>
           <Button
             onClick={() => {
-              handleClick("song");
+              handleClick("Song");
               setOpen(false);
             }}
             color="primary"
@@ -62,7 +62,7 @@ export const Header = () => {
           </Button>
           <Button
             onClick={() => {
-              handleClick("podcast");
+              handleClick("Podcast");
               setOpen(false);
             }}
             color="error"
@@ -71,7 +71,7 @@ export const Header = () => {
           </Button>
           <Button
             onClick={() => {
-              handleClick("horse");
+              handleClick("Horse");
               setOpen(false);
             }}
             color="success"
@@ -80,7 +80,7 @@ export const Header = () => {
           </Button>
           <Button
             onClick={() => {
-              handleClick("other");
+              handleClick("Other");
               setOpen(false);
             }}
             color="primary"

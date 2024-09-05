@@ -7,7 +7,11 @@ import { schema } from "./sanity/schema";
 import {
   Compass,
   Globe,
+  Guitar,
+  Horse,
+  MusicNotes,
   Pencil,
+  Record,
   Scroll,
   Ticket,
   UsersThree,
@@ -43,7 +47,7 @@ export default defineConfig({
                           '_type == "nameOfThing" && typeOfName == "Band"'
                         )
                       )
-                      .icon(Compass),
+                      .icon(Guitar),
                     S.listItem()
                       .title("Album Names")
                       .child(
@@ -51,7 +55,7 @@ export default defineConfig({
                           '_type == "nameOfThing" && typeOfName == "Album"'
                         )
                       )
-                      .icon(Compass),
+                      .icon(Record),
                     S.listItem()
                       .title("Song Names")
                       .child(
@@ -59,7 +63,7 @@ export default defineConfig({
                           '_type == "nameOfThing" && typeOfName == "Song"'
                         )
                       )
-                      .icon(Compass),
+                      .icon(MusicNotes),
                     S.listItem()
                       .title("Podcast Names")
                       .child(
@@ -69,10 +73,18 @@ export default defineConfig({
                       )
                       .icon(Compass),
                     S.listItem()
+                      .title("Horse Names")
+                      .child(
+                        S.documentTypeList("nameOfThing").filter(
+                          '_type == "nameOfThing" && typeOfName == "Horse"'
+                        )
+                      )
+                      .icon(Horse),
+                    S.listItem()
                       .title("All Other Things")
                       .child(
                         S.documentTypeList("nameOfThing").filter(
-                          '_type == "nameOfThing" && typeOfName != "Band" && typeOfName != "Album" && typeOfName != "Song" && typeOfName != "Podcast"'
+                          '_type == "nameOfThing" && typeOfName != "Band" && typeOfName != "Album" && typeOfName != "Song" && typeOfName != "Podcast" && typeOfName != "Horse"'
                         )
                       ),
                   ])

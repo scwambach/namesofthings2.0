@@ -84,3 +84,7 @@ html.nes-ui * {
   left: calc(50% - 40px);
   transform: translate(-50%, -50%);
 }
+
+html.nes-ui *.list-title {
+  font-size: 30px;
+}

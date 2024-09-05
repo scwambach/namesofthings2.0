@@ -2,12 +2,6 @@ import { Form } from "@components/Form";
 import { client } from "@utils/sanityClient";
 import { PageLayout } from "@components/PageLayout";
 
-const thingObject = `_id,
-title,
-description,
-typeOfName,
-"genre": genre->title`;
-
 async function getData() {
   const pageData = await client.fetch(`{
     "genres": *[_type == "genre"] | order(title asc) {
