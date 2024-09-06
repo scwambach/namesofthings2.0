@@ -48,8 +48,14 @@ export const Form = ({
     }
   }, [session]);
 
-  const handleSubmit = async () => {
+  type ApiResponse = {
+    status: number;
+    [key: string]: any; // for other potential properties in the response
+  };
+
+  const handleSubmit = async (): Promise<void> => {
     setSubmitting(true);
+
     const body = {
       title,
       description,
@@ -58,34 +64,34 @@ export const Form = ({
       user,
     };
 
-    const response = await fetch("/api/slackSend", {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const sendPostRequest = async (
+      url: string,
+      body: object
+    ): Promise<Response> => {
+      return await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    };
 
-    const post = await fetch("/api/sanityPost", {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    try {
+      const [slackResponse, sanityPost] = await Promise.all([
+        sendPostRequest("/api/slackSend", body),
+        sendPostRequest("/api/sanityPost", body),
+      ]);
 
-    const postResponse = await post;
+      const data: ApiResponse = await slackResponse.json();
 
-    const data = await response.json();
-
-    console.log(data, postResponse);
-
-    if (data.status === 200) {
-      setStatus("Success");
-    } else {
+      setStatus(data.status === 200 ? "Success" : "Error");
+    } catch (error) {
+      console.error("Error occurred during submission:", error);
       setStatus("Error");
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitting(false);
   };
 
   const clearAll = () => {
@@ -108,7 +114,6 @@ export const Form = ({
           <Text size="large" className="pb-10 flex items-center gap-4">
             Name Something
           </Text>
-          {genre}
           <div className="flex justify-between gap-4 items-end">
             <div
               className="typeOfName"
