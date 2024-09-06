@@ -2,6 +2,8 @@ import { Form } from "@components/Form";
 import { client } from "@utils/sanityClient";
 import { PageLayout } from "@components/PageLayout";
 
+export const revalidate = 604800;
+
 async function getData() {
   const pageData = await client.fetch(`{
     "genres": *[_type == "genre"] | order(title asc) {

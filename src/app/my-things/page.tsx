@@ -2,6 +2,8 @@ import { client } from "@utils/sanityClient";
 import { PageLayout } from "@components/PageLayout";
 import { MyList } from "./MyList";
 
+export const revalidate = 0;
+
 async function getData() {
   const pageData = await client.fetch(`{
     "genres": *[_type == "genre"] | order(title asc) {

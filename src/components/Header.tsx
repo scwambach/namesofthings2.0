@@ -19,7 +19,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="flex justify-between px-8 py-4">
+    <header className="flex justify-between p-4">
       <div className="flex relative gap-8 items-center">
         <Button borderInverted fontColor="black" onClick={() => setOpen(!open)}>
           <List size={22} weight="bold" />

@@ -3,6 +3,8 @@ import { PageLayout } from "@components/PageLayout";
 import { thingObject } from "queries";
 import { List } from "@components/List";
 
+export const revalidate = 0;
+
 async function getData(typeOfName: string) {
   const isOther = typeOfName === "Other" || typeOfName === "other";
 
@@ -38,7 +40,7 @@ export default async function Home({
 
   return (
     <PageLayout allThings={props.allThings}>
-      <div className="w-full max-w-[800px] mx-auto">
+      <div className="w-full max-w-[800px] mx-auto px-4">
         <h1 className="list-title mt-16 mb-4">
           {searchParams.typeOfName} Names
         </h1>

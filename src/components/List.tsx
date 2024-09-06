@@ -14,7 +14,7 @@ export const List = ({
 }) => {
   const noItems = items.length === 0;
   return (
-    <div className="flex justify-center gap-4 flex-col px-4 w-full mx-auto py-10">
+    <div className="flex justify-center gap-4 flex-col pl-4 w-full mx-auto py-10">
       {noItems ? (
         <h1
           className="text-center"
