@@ -35,7 +35,7 @@ export const List = ({
                 key={thing._id}
               >
                 <div className="flex flex-col gap-4">
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-4 sm:gap-8 sm:items-end">
+                  <div className="flex flex-col sm:flex-row sm:justify-between gap-4 sm:gap-8 sm:items-start">
                     <p
                       className="text-blue-400 font-bold block sm:w-2/3"
                       style={{
