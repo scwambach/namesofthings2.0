@@ -33,7 +33,7 @@ export const Form = ({ items }: { items: ThingProps[] }) => {
   }, [query]);
 
   return (
-    <div className="max-w-[600px] w-full mx-auto px-4">
+    <div className="max-w-[800px] w-full mx-auto px-4">
       <div className="w-full min-h-screen">
         <div className="relative">
           <Input
