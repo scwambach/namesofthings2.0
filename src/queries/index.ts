@@ -4,4 +4,5 @@ typeOfName,
 "genre": genre -> title,
 title,
 user,
+person, 
 description,`;

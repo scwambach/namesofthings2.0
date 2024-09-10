@@ -34,7 +34,7 @@ export const List = ({
                 className={`list-decimal${!isLast ? " border-b-2 border-black pb-8 mb-8" : ""}`}
                 key={thing._id}
               >
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between gap-4 sm:gap-8 sm:items-end">
                     <p
                       className="text-blue-400 font-bold block sm:w-2/3"
@@ -51,6 +51,10 @@ export const List = ({
                       {thing.genre && (
                         <ItemDetail title="GENRE" value={thing.genre} />
                       )}
+
+                      {thing.person && (
+                        <ItemDetail title="PERSON" value={thing.person} />
+                      )}
                     </div>
                   </div>
                   {thing.description && (
@@ -64,6 +68,7 @@ export const List = ({
                       className="sm:w-2/3"
                       value={dayjs(thing.date).format("MMM D, YYYY")}
                     />
+
                     {withUser && (
                       <>
                         {thing.user && (
