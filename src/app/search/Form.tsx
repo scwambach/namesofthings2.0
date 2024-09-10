@@ -51,7 +51,7 @@ export const Form = ({ items }: { items: ThingProps[] }) => {
           />
         </div>
         {searchActive ? (
-          <List items={filteredItems} />
+          <List items={filteredItems} withUser />
         ) : (
           <div className="flex justify-center gap-4 text-center flex-col pl-4 w-full mx-auto py-10">
             <h1
