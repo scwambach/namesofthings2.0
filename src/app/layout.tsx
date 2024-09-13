@@ -1,5 +1,15 @@
 import { getServerSession } from "next-auth";
 import SessionProvider from "@components/SessionProvider";
+import { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  // Also supported by less commonly used
+  // interactiveWidget: 'resizes-visual',
+};
 
 export default async function RootLayout({
   children,
@@ -10,10 +20,6 @@ export default async function RootLayout({
   return (
     <html lang="en" className="nes-ui">
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
         <title>Names of Things</title>
         <meta name="description" content="A place where you can name stuff." />
         <link rel="icon" href="/favicon.png" />
