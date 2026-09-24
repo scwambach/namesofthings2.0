@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
+  trustHost: true,
   providers: [
     GitHubProvider({
       clientId: process.env.NEXTAUTH_GITHUB_ID as string,
