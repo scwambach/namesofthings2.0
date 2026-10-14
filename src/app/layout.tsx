@@ -1,6 +1,5 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/options";
-import SessionProvider from "@components/SessionProvider";
+import { createClient } from "@utils/supabase/server";
+import { AuthProvider } from "@components/AuthProvider";
 import { Viewport } from "next";
 
 export const viewport: Viewport = {
@@ -15,7 +14,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authOptions);
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <html lang="en" className="nes-ui">
       <head>
@@ -24,9 +27,9 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.png" />
       </head>
       <body>
-        <SessionProvider session={session}>
+        <AuthProvider initialUser={user}>
           <>{children}</>
-        </SessionProvider>
+        </AuthProvider>
       </body>
     </html>
   );

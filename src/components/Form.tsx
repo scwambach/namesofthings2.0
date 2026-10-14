@@ -8,7 +8,8 @@ import {
   Text,
   TextArea,
 } from "nes-ui-react";
-import { useSession } from "next-auth/react";
+import { useAuth } from "./AuthProvider";
+import { normalizeAuthUser } from "@utils/normalizeAuthUser";
 import { ChangeEvent, useEffect, useState } from "react";
 import { GenreProps } from "@utils/types";
 
@@ -19,7 +20,7 @@ export const Form = ({
   genres: GenreProps[];
   typesOfThings: string[];
 }) => {
-  const { data: session } = useSession();
+  const { user: authUser } = useAuth();
 
   const [addNew, setAddNew] = useState(false);
   const [description, setDescription] = useState<any>();
@@ -35,10 +36,10 @@ export const Form = ({
 
   useEffect(() => {
     setDarkModeActivation(false);
-    if (session) {
-      setUser(JSON.stringify(session.user));
+    if (authUser) {
+      setUser(JSON.stringify(normalizeAuthUser(authUser)));
     }
-  }, [session]);
+  }, [authUser]);
 
   type ApiResponse = {
     status: number;
@@ -101,7 +102,7 @@ export const Form = ({
           <PixelIcon name="pixelicon-sun" />
         </div>
       )}
-      {session && status === "Ready" ? (
+      {authUser && status === "Ready" ? (
         <div className={submitting ? "loading" : ""}>
           <Text size="large" className="pb-10 flex items-center gap-4">
             Name Something
@@ -213,7 +214,7 @@ export const Form = ({
             </Button>
           </div>
         </div>
-      ) : session && status === "Error" ? (
+      ) : authUser && status === "Error" ? (
         <div>
           <span className="text-red-500">
             <Text size="xlarge" className="pb-10 flex items-center gap-4">
@@ -224,7 +225,7 @@ export const Form = ({
             </Text>
           </span>
         </div>
-      ) : session && status === "Success" ? (
+      ) : authUser && status === "Success" ? (
         <div>
           <span className="text-green-500">
             <Text size="xlarge" className="pb-10 flex items-center gap-4">

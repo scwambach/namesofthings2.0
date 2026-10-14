@@ -1,5 +1,4 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/options";
+import { createClient as createSupabaseServerClient } from "@utils/supabase/server";
 import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
 import { List } from "@components/List";
@@ -8,25 +7,37 @@ import { ThingProps } from "@utils/types";
 export const revalidate = 0;
 
 async function getData() {
-  const session = await getServerSession(authOptions);
+  const authClient = createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await authClient.auth.getUser();
 
-  const [{ data: things }, { data: myThings }] = await Promise.all([
+  const [{ data: things }, { data: allMyThings }] = await Promise.all([
     supabase
       .from("things")
       .select("title")
       .order("created_at", { ascending: false }),
-    session
+    user
       ? supabase
           .from("things")
           .select("*")
-          .eq("user", JSON.stringify(session.user))
           .order("created_at", { ascending: false })
       : Promise.resolve({ data: [] as ThingProps[] }),
   ]);
 
+  const myThings = user
+    ? (allMyThings ?? []).filter((thing) => {
+        try {
+          return JSON.parse(thing.user ?? "null")?.email === user.email;
+        } catch {
+          return false;
+        }
+      })
+    : [];
+
   return {
     allThings: (things ?? []).map((thing) => thing.title),
-    myThings: myThings ?? [],
+    myThings,
   };
 }
 

@@ -1,6 +1,7 @@
 "use client";
 import { Button, Menu } from "nes-ui-react";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useAuth } from "./AuthProvider";
+import { createClient } from "@utils/supabase/client";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -9,20 +10,40 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 
 export const LogIn = () => {
   const router = useRouter();
-  const { data: session } = useSession();
+  const { user } = useAuth();
   const [profileOpen, setProfileOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const signInWith = async (provider: "google" | "github") => {
+    const supabase = createClient();
+    await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+  };
+
+  const signOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.refresh();
+  };
 
   return (
     <div className="flex items-center gap-4">
       <Link href="/search">
         <MagnifyingGlass size={22} weight="bold" />
       </Link>
-      {session ? (
+      {user ? (
         <div className="relative">
           <button onClick={() => setProfileOpen(!profileOpen)}>
             <div className="overflow-hidden rounded-full w-16">
               <Image
-                src={session.user?.image as string}
+                src={
+                  (user.user_metadata?.avatar_url ||
+                    user.user_metadata?.picture) as string
+                }
                 alt="user avatar"
                 width={100}
                 height={100}
@@ -47,15 +68,32 @@ export const LogIn = () => {
             >
               My Things
             </Button>
-            <Button color="error" onClick={() => signOut()}>
+            <Button color="error" onClick={signOut}>
               Sign Out
             </Button>
           </Menu>
         </div>
       ) : (
-        <Button color="primary" onClick={() => signIn()}>
-          Log In
-        </Button>
+        <div className="relative">
+          <Button color="primary" onClick={() => setLoginOpen(!loginOpen)}>
+            Log In
+          </Button>
+          <Menu
+            open={loginOpen}
+            modal
+            className="top-full right-0 bg-black"
+            onClose={() => {
+              setLoginOpen(false);
+            }}
+          >
+            <Button color="primary" onClick={() => signInWith("google")}>
+              Sign in with Google
+            </Button>
+            <Button color="error" onClick={() => signInWith("github")}>
+              Sign in with GitHub
+            </Button>
+          </Menu>
+        </div>
       )}
     </div>
   );
