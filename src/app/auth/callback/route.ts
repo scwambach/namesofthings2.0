@@ -12,7 +12,19 @@ export async function GET(request: NextRequest) {
     if (!error) {
       return NextResponse.redirect(`${origin}${next}`);
     }
+    console.error("Auth callback exchangeCodeForSession error:", error);
+    return NextResponse.redirect(
+      `${origin}/?authError=${encodeURIComponent(error.message)}`
+    );
   }
 
-  return NextResponse.redirect(`${origin}/`);
+  const errorDescription = searchParams.get("error_description");
+  if (errorDescription) {
+    console.error("Auth callback provider error:", errorDescription);
+  }
+  return NextResponse.redirect(
+    `${origin}/?authError=${encodeURIComponent(
+      errorDescription ?? "missing code"
+    )}`
+  );
 }
