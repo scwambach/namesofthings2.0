@@ -1,10 +1,15 @@
 export interface ThingProps {
-  _id: string;
-  date: string;
+  id: string;
+  created_at: string;
   description?: string;
   genre?: string;
   person?: string;
   title: string;
-  typeOfName: string;
+  type_of_name: string;
   user?: string;
+}
+
+export interface GenreProps {
+  id: string;
+  title: string;
 }

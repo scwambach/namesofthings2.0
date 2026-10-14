@@ -30,9 +30,9 @@ export const List = ({
             const isLast = index === items.length - 1;
             return (
               <li
-                id={thing._id}
+                id={thing.id}
                 className={`list-decimal${!isLast ? " border-b-2 border-black pb-8 mb-8" : ""}`}
-                key={thing._id}
+                key={thing.id}
               >
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between gap-4 sm:gap-8 sm:items-start">
@@ -45,8 +45,8 @@ export const List = ({
                       {thing.title}
                     </p>
                     <div className="sm:w-1/3 flex flex-col sm:gap-0 gap-4">
-                      <Link href={`/list?typeOfName=${thing.typeOfName}`}>
-                        <ItemDetail title="TYPE" value={thing.typeOfName} />
+                      <Link href={`/list?typeOfName=${thing.type_of_name}`}>
+                        <ItemDetail title="TYPE" value={thing.type_of_name} />
                       </Link>
                       {thing.genre && (
                         <ItemDetail title="GENRE" value={thing.genre} />
@@ -66,7 +66,7 @@ export const List = ({
                     <ItemDetail
                       title="DATE"
                       className="sm:w-2/3"
-                      value={dayjs(thing.date).format("MMM D, YYYY")}
+                      value={dayjs(thing.created_at).format("MMM D, YYYY")}
                     />
 
                     {withUser && (

@@ -1,22 +1,22 @@
-import { client } from "@utils/sanityClient";
+import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
 import { Form } from "./Form";
-import { thingObject } from "queries";
 
 export const revalidate = 0;
 
 async function getData() {
-  const pageData = await client.fetch(`{
-    "genres": *[_type == "genre"] | order(title asc) {
-      _id,
-      title
-    },
-    "allThings": *[_type == "nameOfThing"] | order(_createdAt desc)[].title,
-    "items": *[_type == "nameOfThing"] | order(title asc) {
-      ${thingObject}
-    }
-  }`);
-  return pageData;
+  const [{ data: things }, { data: items }] = await Promise.all([
+    supabase
+      .from("things")
+      .select("title")
+      .order("created_at", { ascending: false }),
+    supabase.from("things").select("*").order("title"),
+  ]);
+
+  return {
+    allThings: (things ?? []).map((thing) => thing.title),
+    items: items ?? [],
+  };
 }
 
 export default async function Home() {

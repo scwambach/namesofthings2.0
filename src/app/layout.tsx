@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/options";
 import SessionProvider from "@components/SessionProvider";
 import { Viewport } from "next";
 
@@ -14,7 +15,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   return (
     <html lang="en" className="nes-ui">
       <head>

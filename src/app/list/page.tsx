@@ -1,32 +1,42 @@
-import { client } from "@utils/sanityClient";
+import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
-import { thingObject } from "queries";
 import { List } from "@components/List";
 
 export const revalidate = 0;
 
+const namedTypes = ["Band", "Album", "Song", "Podcast", "Horse"];
+
 async function getData(typeOfName: string) {
   const isOther = typeOfName === "Other" || typeOfName === "other";
 
-  const otherQuery =
-    '_type == "nameOfThing" && typeOfName != "Band" && typeOfName != "Album" && typeOfName != "Song" && typeOfName != "Podcast" && typeOfName != "Horse"';
+  let specificThingsQuery = supabase
+    .from("things")
+    .select("*")
+    .order("created_at", { ascending: false });
 
-  const pageData = await client.fetch(
-    `{
-    "genres": *[_type == "genre"] | order(title asc) {
-      _id,
-      title
-    },
-    "allThings": *[_type == "nameOfThing"] | order(_createdAt desc)[].title,
-    "specificThings": *[${isOther ? otherQuery : '_type == "nameOfThing" && typeOfName == $typeOfName'}] | order(_createdAt desc) {
-      ${thingObject}
-    }
-}`,
-    {
-      typeOfName,
-    }
-  );
-  return pageData;
+  specificThingsQuery = isOther
+    ? specificThingsQuery.not(
+        "type_of_name",
+        "in",
+        `(${namedTypes.join(",")})`
+      )
+    : specificThingsQuery.eq("type_of_name", typeOfName);
+
+  const [{ data: genres }, { data: things }, { data: specificThings }] =
+    await Promise.all([
+      supabase.from("genres").select("id, title").order("title"),
+      supabase
+        .from("things")
+        .select("title")
+        .order("created_at", { ascending: false }),
+      specificThingsQuery,
+    ]);
+
+  return {
+    genres: genres ?? [],
+    allThings: (things ?? []).map((thing) => thing.title),
+    specificThings: specificThings ?? [],
+  };
 }
 
 export default async function Home({

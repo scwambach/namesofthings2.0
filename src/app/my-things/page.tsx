@@ -1,18 +1,33 @@
-import { client } from "@utils/sanityClient";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/options";
+import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
-import { MyList } from "./MyList";
+import { List } from "@components/List";
+import { ThingProps } from "@utils/types";
 
 export const revalidate = 0;
 
 async function getData() {
-  const pageData = await client.fetch(`{
-    "genres": *[_type == "genre"] | order(title asc) {
-      _id,
-      title
-    },
-    "allThings": *[_type == "nameOfThing"] | order(_createdAt desc)[].title,
-  }`);
-  return pageData;
+  const session = await getServerSession(authOptions);
+
+  const [{ data: things }, { data: myThings }] = await Promise.all([
+    supabase
+      .from("things")
+      .select("title")
+      .order("created_at", { ascending: false }),
+    session
+      ? supabase
+          .from("things")
+          .select("*")
+          .eq("user", JSON.stringify(session.user))
+          .order("created_at", { ascending: false })
+      : Promise.resolve({ data: [] as ThingProps[] }),
+  ]);
+
+  return {
+    allThings: (things ?? []).map((thing) => thing.title),
+    myThings: myThings ?? [],
+  };
 }
 
 export default async function MyThings() {
@@ -20,7 +35,9 @@ export default async function MyThings() {
 
   return (
     <PageLayout allThings={props.allThings}>
-      <MyList />
+      <div className="w-full max-w-[800px] mx-auto">
+        <List items={props.myThings} />
+      </div>
     </PageLayout>
   );
 }

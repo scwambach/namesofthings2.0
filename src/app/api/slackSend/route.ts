@@ -12,16 +12,6 @@ export interface FormDataProps {
 export async function POST(request: NextRequest) {
   const formData: FormDataProps = await request.json();
 
-  if (formData.genre) {
-    const getGenre = await fetch(
-      `https://pjua03mg.api.sanity.io/v2024-03-27/data/query/production?query=*%5B_type+%3D%3D+%27genre%27+%26%26+_id+%3D%3D+%27${formData.genre}%27%5D%5B0%5D+%7B%0A++title++%0A%7D`
-    );
-
-    const genre = await getGenre.json();
-
-    formData.genre = await genre.result.title;
-  }
-
   try {
     const response = await fetch(process.env.NEXT_SLACK_WEBHOOK as string, {
       method: "POST",

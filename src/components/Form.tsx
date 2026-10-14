@@ -10,15 +10,7 @@ import {
 } from "nes-ui-react";
 import { useSession } from "next-auth/react";
 import { ChangeEvent, useEffect, useState } from "react";
-
-export interface GenreProps {
-  _type: string;
-  _id: string;
-  _rev: string;
-  _createdAt: string;
-  _updatedAt: string;
-  title: string;
-}
+import { GenreProps } from "@utils/types";
 
 export const Form = ({
   genres,
@@ -78,9 +70,9 @@ export const Form = ({
     };
 
     try {
-      const [slackResponse, sanityPost] = await Promise.all([
+      const [slackResponse] = await Promise.all([
         sendPostRequest("/api/slackSend", body),
-        sendPostRequest("/api/sanityPost", body),
+        sendPostRequest("/api/addThing", body),
       ]);
 
       const data: ApiResponse = await slackResponse.json();
@@ -192,7 +184,7 @@ export const Form = ({
             >
               <option>--</option>
               {genres.map((genre) => (
-                <option key={genre._id} value={genre._id}>
+                <option key={genre.id} value={genre.title}>
                   {genre.title}
                 </option>
               ))}

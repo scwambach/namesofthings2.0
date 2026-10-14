@@ -1,18 +1,22 @@
 import { Form } from "@components/Form";
-import { client } from "@utils/sanityClient";
+import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
 
 export const revalidate = 604800;
 
 async function getData() {
-  const pageData = await client.fetch(`{
-    "genres": *[_type == "genre"] | order(title asc) {
-      _id,
-      title
-    },
-    "allThings": *[_type == "nameOfThing"] | order(_createdAt desc)[].title,
-  }`);
-  return pageData;
+  const [{ data: genres }, { data: things }] = await Promise.all([
+    supabase.from("genres").select("id, title").order("title"),
+    supabase
+      .from("things")
+      .select("title")
+      .order("created_at", { ascending: false }),
+  ]);
+
+  return {
+    genres: genres ?? [],
+    allThings: (things ?? []).map((thing) => thing.title),
+  };
 }
 
 export default async function Home() {
