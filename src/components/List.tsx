@@ -1,8 +1,8 @@
 import { ItemDetail } from "@components/ItemDetail";
+import { Avatar } from "@components/Avatar";
 import { parseUser } from "@utils/parseUser";
 import { ThingProps } from "@utils/types";
 import dayjs from "dayjs";
-import Image from "next/image";
 import Link from "next/link";
 
 export const List = ({
@@ -73,12 +73,10 @@ export const List = ({
                       <>
                         {thing.user && (
                           <div className="flex items-center gap-4 sm:w-1/3 mt-4 sm:mt-0">
-                            <Image
+                            <Avatar
                               src={parseUser(thing.user).image}
-                              alt={parseUser(thing.user).name}
-                              width={30}
-                              className="rounded-full w-[30px] h-[30px]"
-                              height={30}
+                              name={parseUser(thing.user).name}
+                              size={30}
                             />
                             <span>{parseUser(thing.user).name}</span>
                           </div>
