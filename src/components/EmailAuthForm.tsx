@@ -1,5 +1,5 @@
 "use client";
-import { Button, Input } from "nes-ui-react";
+import { Button, Input, Text } from "nes-ui-react";
 import { createClient } from "@utils/supabase/client";
 import { useState } from "react";
 
@@ -53,6 +53,9 @@ export const EmailAuthForm = ({
 
   return (
     <div className="flex flex-col items-start gap-2 p-2 min-w-[220px]">
+      <Text size="large" className="text-blue-400 pb-2">
+        {mode === "signin" ? "Log In" : "Sign Up"}
+      </Text>
       <Input
         type="email"
         name="email"
