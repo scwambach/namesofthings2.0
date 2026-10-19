@@ -3,7 +3,11 @@ import { Button, Input } from "nes-ui-react";
 import { createClient } from "@utils/supabase/client";
 import { useState } from "react";
 
-export const EmailAuthForm = () => {
+export const EmailAuthForm = ({
+  onSignedIn,
+}: {
+  onSignedIn?: () => void;
+} = {}) => {
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +27,7 @@ export const EmailAuthForm = () => {
         password,
       });
       if (error) setError(error.message);
+      else onSignedIn?.();
     } else {
       const { data, error } = await supabase.auth.signUp({
         email,

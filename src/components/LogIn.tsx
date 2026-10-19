@@ -3,7 +3,6 @@ import { Button, Menu } from "nes-ui-react";
 import { useAuth } from "./AuthProvider";
 import { createClient } from "@utils/supabase/client";
 import { Avatar } from "@components/Avatar";
-import { EmailAuthForm } from "@components/EmailAuthForm";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -13,19 +12,8 @@ export const LogIn = () => {
   const router = useRouter();
   const { user } = useAuth();
   const [profileOpen, setProfileOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const signInWithGoogle = async () => {
-    const supabase = createClient();
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
-  };
 
   const signOut = async () => {
     const supabase = createClient();
@@ -118,24 +106,9 @@ export const LogIn = () => {
           </Menu>
         </div>
       ) : (
-        <div className="relative">
-          <Button color="primary" onClick={() => setLoginOpen(!loginOpen)}>
-            Log In
-          </Button>
-          <Menu
-            open={loginOpen}
-            modal
-            className="top-full right-0 bg-black"
-            onClose={() => {
-              setLoginOpen(false);
-            }}
-          >
-            <Button color="primary" onClick={signInWithGoogle}>
-              Sign in with Google
-            </Button>
-            <EmailAuthForm />
-          </Menu>
-        </div>
+        <Button color="primary" onClick={() => router.push("/login")}>
+          Log In
+        </Button>
       )}
     </div>
   );
