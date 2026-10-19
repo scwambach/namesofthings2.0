@@ -1,6 +1,35 @@
 import { createClient } from "@utils/supabase/server";
 import { AuthProvider } from "@components/AuthProvider";
-import { Viewport } from "next";
+import { pixelFont } from "@styles/fonts";
+import { Metadata, Viewport } from "next";
+
+const siteUrl = "https://namesofthings.com";
+const description =
+  "An ongoing catalogue of invented names for bands, albums, songs, podcasts, horses, and anything else that needs one.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Names of Things",
+    template: "%s | Names of Things",
+  },
+  description,
+  openGraph: {
+    title: "Names of Things",
+    description,
+    url: siteUrl,
+    siteName: "Names of Things",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Names of Things",
+    description,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -20,13 +49,8 @@ export default async function RootLayout({
   } = await supabase.auth.getUser();
 
   return (
-    <html lang="en" className="nes-ui">
-      <head>
-        <title>Names of Things</title>
-        <meta name="description" content="A place where you can name stuff." />
-        <link rel="icon" href="/favicon.png" />
-      </head>
-      <body>
+    <html lang="en">
+      <body className={`${pixelFont.className} bg-white text-black`}>
         <AuthProvider initialUser={user}>
           <>{children}</>
         </AuthProvider>

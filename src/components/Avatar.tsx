@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { accent } from "@styles/palette";
 
 // Some Google accounts (notably Workspace accounts) don't return an
 // avatar_url/picture claim at all, so this falls back to an initial
@@ -29,8 +30,8 @@ export const Avatar = ({
 
   return (
     <div
-      className={`rounded-full flex items-center justify-center bg-blue-400 text-white font-bold ${className}`}
-      style={{ width: size, height: size }}
+      className={`rounded-full flex items-center justify-center text-white font-bold ${className}`}
+      style={{ width: size, height: size, backgroundColor: accent }}
     >
       {name?.trim()?.[0]?.toUpperCase() || "?"}
     </div>
