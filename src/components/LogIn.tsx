@@ -3,6 +3,7 @@ import { Button, Menu } from "nes-ui-react";
 import { useAuth } from "./AuthProvider";
 import { createClient } from "@utils/supabase/client";
 import { Avatar } from "@components/Avatar";
+import { EmailAuthForm } from "@components/EmailAuthForm";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -16,10 +17,10 @@ export const LogIn = () => {
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const signInWith = async (provider: "google" | "github") => {
+  const signInWithGoogle = async () => {
     const supabase = createClient();
     await supabase.auth.signInWithOAuth({
-      provider,
+      provider: "google",
       options: {
         redirectTo: `${window.location.origin}/auth/callback`,
       },
@@ -129,12 +130,10 @@ export const LogIn = () => {
               setLoginOpen(false);
             }}
           >
-            <Button color="primary" onClick={() => signInWith("google")}>
+            <Button color="primary" onClick={signInWithGoogle}>
               Sign in with Google
             </Button>
-            <Button color="error" onClick={() => signInWith("github")}>
-              Sign in with GitHub
-            </Button>
+            <EmailAuthForm />
           </Menu>
         </div>
       )}
