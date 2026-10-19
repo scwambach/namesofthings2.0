@@ -1,34 +1,24 @@
-"use client";
+import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
-import { EmailAuthForm } from "@components/EmailAuthForm";
-import { createClient } from "@utils/supabase/client";
-import { Button, Text } from "nes-ui-react";
-import { useRouter } from "next/navigation";
+import { LoginForm } from "./LoginForm";
 
-export default function LoginPage() {
-  const router = useRouter();
+export const revalidate = 0;
 
-  const signInWithGoogle = async () => {
-    const supabase = createClient();
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
-  };
+async function getData() {
+  const { data: things } = await supabase
+    .from("things")
+    .select("title")
+    .order("created_at", { ascending: false });
+
+  return { allThings: (things ?? []).map((thing) => thing.title) };
+}
+
+export default async function LoginPage() {
+  const props = await getData();
 
   return (
-    <PageLayout>
-      <div className="flex justify-center gap-4 flex-col px-4 w-full max-w-[400px] mx-auto py-10">
-        <Text size="large" className="pb-6">
-          Log In
-        </Text>
-        <Button color="primary" onClick={signInWithGoogle}>
-          Sign in with Google
-        </Button>
-        <EmailAuthForm onSignedIn={() => router.push("/")} />
-      </div>
+    <PageLayout allThings={props.allThings}>
+      <LoginForm />
     </PageLayout>
   );
 }

@@ -52,7 +52,7 @@ export const EmailAuthForm = ({
   }
 
   return (
-    <div className="flex flex-col gap-2 p-2 min-w-[220px]">
+    <div className="flex flex-col items-start gap-2 p-2 min-w-[220px]">
       <Input
         type="email"
         name="email"
