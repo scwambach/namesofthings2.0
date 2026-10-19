@@ -1,8 +1,14 @@
 import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
 import { LoginForm } from "./LoginForm";
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: "Log In",
+  robots: { index: false, follow: false },
+};
 
 async function getData() {
   const { data: things } = await supabase

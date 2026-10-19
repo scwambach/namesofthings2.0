@@ -9,18 +9,8 @@ export const ItemDetail = ({
 }) => {
   return (
     <div className={className}>
-      <p
-        className="text-black"
-        style={{
-          fontSize: "0.8rem",
-        }}
-      >
-        <strong
-          className="font-bold"
-          style={{
-            fontSize: "0.8rem",
-          }}
-        >
+      <p className="text-[13px]">
+        <strong className="uppercase tracking-wider text-xs text-[#555555]">
           {title}:
         </strong>{" "}
         {value}

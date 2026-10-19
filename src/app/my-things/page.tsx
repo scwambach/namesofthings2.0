@@ -3,8 +3,14 @@ import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
 import { List } from "@components/List";
 import { ThingProps } from "@utils/types";
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: "My Entries",
+  robots: { index: false, follow: false },
+};
 
 async function getData() {
   const authClient = createSupabaseServerClient();
@@ -46,7 +52,10 @@ export default async function MyThings() {
 
   return (
     <PageLayout allThings={props.allThings}>
-      <div className="w-full max-w-[800px] mx-auto">
+      <div className="w-full max-w-[800px] mx-auto px-5 sm:px-10">
+        <h1 className="text-lg leading-relaxed mt-16 mb-8">
+          My Entries
+        </h1>
         <List items={props.myThings} />
       </div>
     </PageLayout>

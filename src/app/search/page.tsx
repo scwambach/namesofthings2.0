@@ -1,8 +1,14 @@
 import { supabase } from "@utils/supabaseClient";
 import { PageLayout } from "@components/PageLayout";
 import { Form } from "./Form";
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: "Search",
+  description: "Search the full catalogue of invented names.",
+};
 
 async function getData() {
   const [{ data: things }, { data: items }] = await Promise.all([

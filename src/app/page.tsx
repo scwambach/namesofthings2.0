@@ -26,6 +26,12 @@ export default async function Home() {
 
   return (
     <PageLayout allThings={props.allThings}>
+      <p className="max-w-[640px] mx-auto px-5 sm:px-10 pt-12 text-[12px] leading-relaxed font-medium text-center">
+        Every entry in this catalogue began as a joke, a dare, or an
+        accident &mdash; submitted by someone who needed, urgently, to call
+        something <em>something</em>. What follows is the instrument by
+        which that happens.
+      </p>
       <Form {...props} typesOfThings={orderOfTypes} />
     </PageLayout>
   );
