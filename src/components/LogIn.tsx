@@ -63,7 +63,8 @@ export const LogIn = () => {
     user?.user_metadata?.custom_avatar_url ||
     user?.user_metadata?.avatar_url ||
     user?.user_metadata?.picture;
-  const avatarName = user?.user_metadata?.full_name || user?.user_metadata?.name;
+  const avatarName =
+    user?.user_metadata?.full_name || user?.user_metadata?.name;
 
   return (
     <div className="flex items-center gap-4">
@@ -124,7 +125,7 @@ export const LogIn = () => {
           <Menu
             open={loginOpen}
             modal
-            className="top-full right-0 bg-black"
+            className="top-full right-0 bg-black min-w-[180px]"
             onClose={() => {
               setLoginOpen(false);
             }}
